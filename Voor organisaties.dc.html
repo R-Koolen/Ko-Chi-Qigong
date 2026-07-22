@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Voor Organisaties - Ko-Chi qigong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Cinzel+Decorative:wght@400;700;900&amp;family=Homenaje&amp;family=Charm:wght@400;700&amp;display=swap">
+  <style>
+    html { font-size: 93.75%; }
+    body { margin: 0; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #1F3864; background-color: #ffffff; background-image: radial-gradient(rgb(211,182,184) 0%, rgba(212,182,184,0.36) 100%); background-attachment: scroll; min-height: 100vh; }
+    a { color: #1f3864; }
+    a:hover, a:focus { color: #5b739e; }
+    ::selection { background-color: #d3b6b8; color: #000000; }
+    p { margin: 0 0 20px 0; }
+  </style>
+</helmet>
+
+<header data-screen-label="Header" style="background-image: linear-gradient(81deg, rgba(212,182,184,0.92) 4%, rgb(212,182,184) 100%); min-height: 91px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 35px; position: relative; z-index: 20;">
+  <div style="display: flex; align-items: center;">
+    <a href="Home v2.dc.html" style="display: inline-flex;"><img src="assets/logo.png" alt="Ko-Chi qigong" width="237" height="58" style="display: block; width: 237px; height: 58px;"></a>
+  </div>
+  <nav aria-label="Site navigatie" style="{{ navStyle }}">
+    <a href="Home v2.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Home</a>
+
+    <div style="position: relative;" onMouseEnter="{{ openPart }}" onMouseLeave="{{ closePart }}">
+      <a href="Voor particulieren.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Voor Particulieren ▾</a>
+      <sc-if value="{{ partOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; top: 91px; left: 0; min-width: 200px; background: #f6ebec; box-shadow: 0 5px 20px rgba(0,0,0,0.12); border-top: 2px solid #d3b6b8; display: flex; flex-direction: column; z-index: 40;">
+          <a href="Qigong.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Qigong</a>
+          <a href="Coaching.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Coaching</a>
+          <a href="Meditatie.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Meditatie</a>
+          <a href="Over mij.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Over mij</a>
+          <a href="Tarieven.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Tarieven</a>
+          <a href="Voor particulieren.dc.html#Agenda" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Agenda</a>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="position: relative;" onMouseEnter="{{ openOrg }}" onMouseLeave="{{ closeOrg }}">
+      <a href="Voor organisaties.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #5b739e; text-decoration: none;" style-hover="color: #1F3864;">Voor Organisaties ▾</a>
+      <sc-if value="{{ orgOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; top: 91px; left: 0; min-width: 260px; background: #f6ebec; box-shadow: 0 5px 20px rgba(0,0,0,0.12); border-top: 2px solid #d3b6b8; display: flex; flex-direction: column; z-index: 40;">
+          <a href="Leiderschap en teams.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Bewust leiderschap &amp; samenwerking</a>
+          <a href="Coaching-professionals.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Coaching voor professionals</a>
+          <a href="Vitaliteit-werkvloer.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Vitaliteit &amp; ontspanning op de werkvloer</a>
+          <a href="Voor organisaties.dc.html#Visie" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Mijn visie</a>
+          <a href="Voor organisaties.dc.html#Kennismaken" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Kennismaken</a>
+        </div>
+      </sc-if>
+    </div>
+
+    <a href="#" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Inspiratie</a>
+    <a href="Contact.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Contact</a>
+  </nav>
+  <button type="button" aria-label="Menu" onClick="{{ toggleMobileMenu }}" style="{{ hamburgerStyle }}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+  </button>
+  <sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; top: 91px; left: 0; right: 0; background: #fefefe; box-shadow: 0 10px 20px rgba(0,0,0,0.15); display: flex; flex-direction: column; z-index: 30;">
+      <a href="Home v2.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Home</a>
+      <a href="Voor particulieren.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Voor Particulieren</a>
+      <a href="Qigong.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Qigong</a>
+      <a href="Coaching.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Coaching</a>
+      <a href="Meditatie.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Meditatie</a>
+      <a href="Over mij.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Over mij</a>
+      <a href="Tarieven.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Tarieven</a>
+      <a href="Voor particulieren.dc.html#Agenda" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Agenda</a>
+      <a href="Voor organisaties.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #5b739e; text-decoration: none; border-bottom: 1px solid #eee2e3;">Voor Organisaties</a>
+      <a href="Leiderschap en teams.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Bewust leiderschap &amp; samenwerking</a>
+      <a href="Coaching-professionals.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Coaching voor professionals</a>
+      <a href="Vitaliteit-werkvloer.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Vitaliteit &amp; ontspanning op de werkvloer</a>
+      <a href="#" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Inspiratie</a>
+      <a href="Contact.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none;">Contact</a>
+    </div>
+  </sc-if>
+</header>
+
+<main style="max-width: 1240px; margin: 0 auto; padding: 0 25px; line-height: 1.86;">
+
+  <section data-screen-label="Quote" style="{{ quoteColStyle }}">
+    <div style="max-width: 900px; margin: 0 auto; background: rgba(211,182,184,0.77); border-radius: 10px; padding: 14px; text-align: center;">
+      <h2 style="margin: 0; font-family: 'Charm', cursive; font-weight: 400; font-size: 26px; line-height: 1.4; color: #1F3864;">"Duurzame verandering begint met anders leren waarnemen"</h2>
+    </div>
+  </section>
+
+  <section data-screen-label="Welkom" style="{{ welkomColStyle }}">
+    <div style="max-width: 820px; margin: 0 auto;">
+      <h4 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 38px; line-height: 1.2; color: #A1565B; text-align: center;">Welkom</h4>
+      <div style="padding: 24px 10px 0 10px;">
+        <p>Ik ondersteun organisaties en professionals om bewuster te zien wat er speelt, in zichzelf, in de samenwerking en in de organisatie. Mijn aanpak verbindt het mentale, emotionele en fysieke.</p>
+        <p>In iedere organisatie spelen zichtbare én onzichtbare processen een rol. Wat wordt uitgesproken, maar ook wat onbenoemd blijft. Patronen, emoties, spanning en overtuigingen beïnvloeden hoe mensen samenwerken, keuzes maken en omgaan met verandering.</p>
+        <p>Ik begeleid organisaties, teams en individuele professionals om inzicht te krijgen in wat er werkelijk speelt. Daarbij combineer ik mijn ervaring binnen organisaties met coachmethodieken, inzichten uit de psychologie, lichaamsbewustzijn en de wijsheid van Qigong.</p>
+        <p>Mijn aanpak brengt denken, voelen en doen met elkaar in verbinding. Daardoor ontstaat niet alleen inzicht, maar ook ruimte voor duurzame verandering die voelbaar en merkbaar is in de dagelijkse praktijk.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Doorklik knoppen" style="{{ cardsColStyle }}">
+    <a href="Leiderschap en teams.dc.html" style="display: block; text-decoration: none; transition: transform 0.25s ease;" style-hover="transform: translateY(-4px);">
+      <div style="overflow: hidden; border-radius: 10px; box-shadow: 0 8px 24px rgba(31,56,100,0.14);">
+        <img src="assets/org-leiderschap.jpg" alt="Bewust leiderschap en samenwerking" style="display: block; width: 100%; height: 240px; object-fit: cover; object-position: center;">
+      </div>
+      <h3 style="margin: 16px 0 4px 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 22px; color: #A1565B; text-align: center; text-decoration: none;">Bewust leiderschap &amp; samenwerking</h3>
+      <p style="margin: 0; font-size: 14px; text-align: center; color: #1F3864; text-decoration: none;">Niet alles wat samenwerking beïnvloedt, wordt uitgesproken of is direct zichtbaar.</p>
+    </a>
+    <a href="Coaching-professionals.dc.html" style="display: block; text-decoration: none; transition: transform 0.25s ease;" style-hover="transform: translateY(-4px);">
+      <div style="overflow: hidden; border-radius: 10px; box-shadow: 0 8px 24px rgba(31,56,100,0.14);">
+        <img src="assets/org-coaching-prof.jpg" alt="Coaching voor professionals" style="display: block; width: 100%; height: 240px; object-fit: cover; object-position: center;">
+      </div>
+      <h3 style="margin: 16px 0 4px 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 22px; color: #A1565B; text-align: center; text-decoration: none;">Coaching voor professionals</h3>
+      <p style="margin: 0; font-size: 14px; text-align: center; color: #1F3864; text-decoration: none;">Duurzame verandering begint bij inzicht in jezelf.</p>
+    </a>
+    <a href="Vitaliteit-werkvloer.dc.html" style="display: block; text-decoration: none; transition: transform 0.25s ease;" style-hover="transform: translateY(-4px);">
+      <div style="overflow: hidden; border-radius: 10px; box-shadow: 0 8px 24px rgba(31,56,100,0.14);">
+        <img src="assets/org-vitaliteit.jpg" alt="Vitaliteit en ontspanning op de werkvloer" style="display: block; width: 100%; height: 240px; object-fit: cover; object-position: center;">
+      </div>
+      <h3 style="margin: 16px 0 4px 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 22px; color: #A1565B; text-align: center; text-decoration: none;">Vitaliteit &amp; ontspanning op de werkvloer</h3>
+      <p style="margin: 0; font-size: 14px; text-align: center; color: #1F3864; text-decoration: none;">Een ontspannen lichaam helpt je omgaan met wat het werk van je vraagt.</p>
+    </a>
+  </section>
+
+  <div id="Visie" style="height: 0;"></div>
+
+  <section data-screen-label="Mijn Visie" style="{{ visieColStyle }}">
+    <div>
+      <h4 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 38px; line-height: 1.2; color: #A1565B; text-align: center;">Mijn Visie</h4>
+      <div style="padding: 10px;">
+        <p><b>Mijn integrale visie op mens en organisatie<br></b>Ik geloof dat duurzame verandering begint met bewust leren waarnemen. Na een carrière in het bedrijfsleven maakte ik bewust de stap naar coaching. In organisaties ontdekte ik hoe vaak de werkelijke dynamiek zich niet afspeelt in wat mensen zeggen, maar in wat voelbaar is tussen de regels door. Die fascinatie voor wat mensen beweegt, vormt voor mij nog altijd de basis van mijn werk.</p>
+        <p><b>De mens als geheel zien<br></b>Wat mij onderscheidt, is de combinatie van mijn ruime ervaring in het bedrijfsleven, mijn expertise als (emotie)coach en mijn jarenlange verdieping in Qigong, een eeuwenoude oosterse levensfilosofie. Ik werd jarenlang opgeleid in Qigong door Chinese leermeesters. Daar leerde ik mijn waarnemingsvermogen verder te ontwikkelen: juist niet alleen door te luisteren naar woorden, maar ook door aandacht te hebben voor signalen van spanning, emoties en de onderliggende dynamiek.</p>
+        <p>In mijn begeleiding kijk ik naar de mens als geheel. Ik combineer wetenschappelijk onderbouwde coachmethodieken met een sterk invoelende, persoonlijke benadering. Daarbij werk ik niet alleen met gedachten en gedrag, maar ook met emoties, het lichaam en de interactie met anderen. Juist de verbinding tussen denken, voelen en doen maakt verandering duurzaam.</p>
+      </div>
+    </div>
+    <div>
+      <img src="assets/petra-hedge.jpg" alt="Petra Koolen" style="display: block; width: 100%; height: auto; border-radius: 10px; margin-top: 70px;">
+      <div style="padding: 10px;">
+        <p>Ik help professionals, teams en organisaties bewust waar te nemen wat er werkelijk speelt: in henzelf, in de samenwerking en in de onderstroom. Juist wanneer zichtbaar wordt wat eerder onzichtbaar bleef, ontstaat ruimte voor nieuwe inzichten, bewustere keuzes, meer verbinding en duurzame verandering.</p>
+        <p>Ik geloof dat duurzame verandering niet begint met harder werken of meer doen, maar met <b>anders leren waarnemen</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="Kennismaken" style="height: 0;"></div>
+
+  <section data-screen-label="Kennismaken" style="{{ kennisColStyle }}">
+    <div style="max-width: 820px; margin: 0 auto;">
+      <h4 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 38px; line-height: 1.2; color: #A1565B; text-align: center;">Kennismaken</h4>
+      <div style="padding: 24px 10px 0 10px;">
+        <p>Benieuwd wat mijn aanpak kan betekenen voor jullie organisatie? Of het nu gaat om een workshop voor teams, individuele coaching, Qigong op de werkvloer of een traject rondom bewustwording, veerkracht en vitaliteit: ik denk graag mee over een aanbod dat aansluit bij wat er binnen jullie organisatie speelt.</p>
+        <p>Iedere organisatie is anders. Daarom werk ik altijd vanuit de vraag, de context en de mensen binnen de organisatie. Ik maak graag een aanbod op maat.</p>
+        <p>Neem gerust <u><a href="Contact.dc.html">contact</a></u> op voor een vrijblijvend kennismakingsgesprek.</p>
+      </div>
+      <div style="margin-top: 30px; text-align: center;">
+        <a href="Contact.dc.html#formulier" style="display: inline-block; padding: 14px 34px; border-radius: 8px; background: rgba(161,86,91,0.9); color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px;" style-hover="background: #A1565B;">Neem contact op</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer data-screen-label="Footer" style="padding: 40px 35px 15px 35px;">
+  <p style="margin: 0 0 15px 0; text-align: center;">Copyright © 2026 Ko-Chi qigong</p>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <span style="font-size: 13px;">Made by Robin&nbsp;&nbsp;</span>
+    <a href="https://www.linkedin.com/in/robin-koolen/" target="_blank" rel="noopener noreferrer" aria-label="Linkedin" style="display: inline-flex; align-items: center; gap: 6px; color: #1c86c6; text-decoration: none; font-size: 13px;" style-hover="color: #16699b;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+      <span>Linkedin</span>
+    </a>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { isMobile: false, mobileMenuOpen: false, partOpen: false, orgOpen: false };
+
+  componentDidMount() {
+    this.mq = window.matchMedia('(max-width: 900px)');
+    this.updateMq = () => this.setState({ isMobile: this.mq.matches });
+    this.updateMq();
+    this.mq.addEventListener('change', this.updateMq);
+  }
+
+  componentWillUnmount() {
+    if (this.mq) this.mq.removeEventListener('change', this.updateMq);
+  }
+
+  renderVals() {
+    const isMobile = this.state.isMobile;
+    const twoCol = (desktopRatio, extra) => ({ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : desktopRatio, gap: isMobile ? '10px' : '20px', alignItems: isMobile ? 'stretch' : 'start', ...extra });
+    return {
+      isMobile,
+      navStyle: { display: isMobile ? 'none' : 'flex', alignItems: 'center', flexWrap: 'wrap' },
+      hamburgerStyle: { display: isMobile ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', border: 'none', background: 'transparent', cursor: 'pointer', color: '#1F3864', padding: 0 },
+      showMobileMenu: isMobile && this.state.mobileMenuOpen,
+      toggleMobileMenu: () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen })),
+      partOpen: this.state.partOpen,
+      openPart: () => this.setState({ partOpen: true }),
+      closePart: () => this.setState({ partOpen: false }),
+      orgOpen: this.state.orgOpen,
+      openOrg: () => this.setState({ orgOpen: true }),
+      closeOrg: () => this.setState({ orgOpen: false }),
+      quoteColStyle: { marginTop: isMobile ? '30px' : '50px' },
+      welkomColStyle: { marginTop: isMobile ? '40px' : '70px' },
+      cardsColStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: isMobile ? '30px' : '36px', marginTop: isMobile ? '50px' : '80px' },
+      visieColStyle: twoCol('2fr 1fr', { marginTop: '80px' }),
+      kennisColStyle: { marginTop: isMobile ? '50px' : '80px' }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Contact - Ko-Chi qigong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Cinzel+Decorative:wght@400;700;900&amp;family=Homenaje&amp;family=Charm:wght@400;700&amp;display=swap">
+  <style>
+    html { font-size: 93.75%; }
+    body { margin: 0; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #1F3864; background-color: #ffffff; background-image: radial-gradient(rgb(211,182,184) 0%, rgba(212,182,184,0.36) 100%); background-attachment: scroll; min-height: 100vh; }
+    a { color: #1f3864; }
+    a:hover, a:focus { color: #5b739e; }
+    ::selection { background-color: #d3b6b8; color: #000000; }
+    p { margin: 0 0 20px 0; }
+  </style>
+</helmet>
+
+<header data-screen-label="Header" style="background-image: linear-gradient(81deg, rgba(212,182,184,0.92) 4%, rgb(212,182,184) 100%); min-height: 91px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 35px; position: relative; z-index: 20;">
+  <div style="display: flex; align-items: center;">
+    <a href="Home v2.dc.html" style="display: inline-flex;"><img src="assets/logo.png" alt="Ko-Chi qigong" width="237" height="58" style="display: block; width: 237px; height: 58px;"></a>
+  </div>
+  <nav aria-label="Site navigatie" style="{{ navStyle }}">
+    <a href="Home v2.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Home</a>
+
+    <div style="position: relative;" onMouseEnter="{{ openPart }}" onMouseLeave="{{ closePart }}">
+      <a href="Voor particulieren.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Voor Particulieren ▾</a>
+      <sc-if value="{{ partOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; top: 91px; left: 0; min-width: 200px; background: #f6ebec; box-shadow: 0 5px 20px rgba(0,0,0,0.12); border-top: 2px solid #d3b6b8; display: flex; flex-direction: column; z-index: 40;">
+          <a href="Qigong.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Qigong</a>
+          <a href="Coaching.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Coaching</a>
+          <a href="Meditatie.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Meditatie</a>
+          <a href="Over mij.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Over mij</a>
+          <a href="Tarieven.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Tarieven</a>
+          <a href="Voor particulieren.dc.html#Agenda" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Agenda</a>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="position: relative;" onMouseEnter="{{ openOrg }}" onMouseLeave="{{ closeOrg }}">
+      <a href="Voor organisaties.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Voor Organisaties ▾</a>
+      <sc-if value="{{ orgOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; top: 91px; left: 0; min-width: 260px; background: #f6ebec; box-shadow: 0 5px 20px rgba(0,0,0,0.12); border-top: 2px solid #d3b6b8; display: flex; flex-direction: column; z-index: 40;">
+          <a href="Leiderschap en teams.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Bewust leiderschap &amp; samenwerking</a>
+          <a href="Coaching-professionals.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Coaching voor professionals</a>
+          <a href="Vitaliteit-werkvloer.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Vitaliteit &amp; ontspanning op de werkvloer</a>
+          <a href="Voor organisaties.dc.html#Visie" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Mijn visie</a>
+          <a href="Voor organisaties.dc.html#Kennismaken" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Kennismaken</a>
+        </div>
+      </sc-if>
+    </div>
+
+    <a href="#" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Inspiratie</a>
+    <a href="Contact.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #5b739e; text-decoration: none;" style-hover="color: #1F3864;">Contact</a>
+  </nav>
+  <button type="button" aria-label="Menu" onClick="{{ toggleMobileMenu }}" style="{{ hamburgerStyle }}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+  </button>
+  <sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; top: 91px; left: 0; right: 0; background: #fefefe; box-shadow: 0 10px 20px rgba(0,0,0,0.15); display: flex; flex-direction: column; z-index: 30;">
+      <a href="Home v2.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Home</a>
+      <a href="Voor particulieren.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Voor Particulieren</a>
+      <a href="Qigong.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Qigong</a>
+      <a href="Coaching.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Coaching</a>
+      <a href="Meditatie.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Meditatie</a>
+      <a href="Over mij.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Over mij</a>
+      <a href="Tarieven.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Tarieven</a>
+      <a href="Voor particulieren.dc.html#Agenda" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Agenda</a>
+      <a href="Voor organisaties.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Voor Organisaties</a>
+      <a href="Leiderschap en teams.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Bewust leiderschap &amp; samenwerking</a>
+      <a href="Coaching-professionals.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Coaching voor professionals</a>
+      <a href="Vitaliteit-werkvloer.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Vitaliteit &amp; ontspanning op de werkvloer</a>
+      <a href="#" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Inspiratie</a>
+      <a href="Contact.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #5b739e; text-decoration: none;">Contact</a>
+    </div>
+  </sc-if>
+</header>
+
+<main style="max-width: 1240px; margin: 0 auto; padding: 0 25px; line-height: 1.86;">
+
+  <section data-screen-label="Contact intro" style="{{ introColStyle }}">
+    <div style="max-width: 820px; margin: 0 auto; text-align: center;">
+      <h1 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 44px; line-height: 1.15; color: #A1565B; text-transform: uppercase; letter-spacing: 2px;">Contact</h1>
+      <p style="margin: 30px 0 0 0; font-weight: 700; font-size: 21px; line-height: 1.5; color: #1F3864;">Heb je een vraag of ben je benieuwd wat ik voor jou of jouw organisatie kan betekenen?</p>
+      <h2 style="margin: 34px 0 0 0; font-weight: 700; font-size: 26px; line-height: 1.3; color: #A1565B;">Ik kom graag met je in contact</h2>
+      <p style="margin: 30px 0 0 0; font-size: 18px; line-height: 1.7;">Of je nu op zoek bent naar Coaching, Qigong training of een workshop voor jouw organisatie: ik luister graag naar jouw vraag. Samen kijken we wat het beste past. Neem gerust contact op voor een vrijblijvende kennismaking.</p>
+      <p style="margin: 22px 0 0 0; font-size: 18px; line-height: 1.7;">Ik werk door heel Nederland. Coaching en workshops kunnen plaatsvinden op locatie, online of in mijn praktijk in Geldermalsen.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Contact gegevens" style="{{ contactColStyle }}">
+    <div style="display: flex; flex-direction: column; gap: 22px;">
+      <div style="text-align: center; padding: 22px 15px; border: 10px solid rgba(161,86,91,0.58); border-radius: 10px;">
+        <p style="margin: 0 0 8px 0;">Ko-Chi Qigong &amp; Coaching</p>
+        <p style="margin: 0 0 8px 0;">Petra Koolen</p>
+        <p style="margin: 0 0 8px 0;">Geldermalsen</p>
+        <p style="margin: 0;">KvK: 99393379<br>BTW-id: NL005383130B08</p>
+      </div>
+      <div style="text-align: center; padding: 22px 15px; border: 10px solid rgba(161,86,91,0.58); border-radius: 10px;">
+        <a href="tel:+31652535721" aria-label="Telefoon" style="display: inline-flex; color: #1F3864; transition: transform 0.2s;" style-hover="transform: scale(1.15);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25" fill="currentColor" aria-hidden="true"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path></svg>
+        </a>
+        <p style="margin: 6px 0 18px 0; font-size: 16px; font-weight: 300;"><a href="tel:+31652535721">Telefoon: +31 6 52535721</a></p>
+        <a href="mailto:Kochi.qigong@gmail.com" aria-label="Email" style="display: inline-flex; color: #1F3864; transition: transform 0.2s;" style-hover="transform: scale(1.15);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25" fill="none" stroke="currentColor" stroke-width="34" aria-hidden="true"><rect x="32" y="96" width="448" height="320" rx="24"></rect><path d="M48 112 L256 288 L464 112"></path></svg>
+        </a>
+        <p style="margin: 6px 0 18px 0; font-size: 16px; font-weight: 300;"><a href="mailto:Kochi.qigong@gmail.com">Email: Kochi.qigong@gmail.com</a></p>
+        <a href="{{ linkedinUrl }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display: inline-flex; color: #1F3864; transition: transform 0.2s;" style-hover="transform: scale(1.15);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="25" height="25" fill="currentColor" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+        </a>
+        <p style="margin: 6px 0 0 0; font-size: 16px; font-weight: 300;"><a href="{{ linkedinUrl }}" target="_blank" rel="noopener noreferrer">LinkedIn: Petra Koolen</a></p>
+      </div>
+    </div>
+    <div>
+      <img src="assets/petra-hedge.jpg" alt="Praktijk in Geldermalsen" style="display: block; width: 100%; height: 100%; min-height: 320px; object-fit: cover; border-radius: 10px;">
+    </div>
+  </section>
+
+
+  <div id="formulier" style="height: 0;"></div>
+
+  <section data-screen-label="Formulieren" style="{{ formColStyle }}">
+    <form onSubmit="{{ submitContact }}" novalidate="novalidate" style="border: 10px solid rgba(161,86,91,0.58); border-radius: 10px; padding: 10px 20px 25px 20px; box-sizing: border-box; display: flex; flex-direction: column; height: 100%;">
+      <div>
+        <label for="veld-naam" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Naam <span style="color: #cc0000;">*</span></label>
+        <input type="text" id="veld-naam" name="naam" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+      </div>
+      <div>
+        <label for="veld-email" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Email <span style="color: #cc0000;">*</span></label>
+        <input type="email" id="veld-email" name="email" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+      </div>
+      <div>
+        <label for="veld-telefoon" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Telefoonnummer</label>
+        <input type="text" id="veld-telefoon" name="telefoon" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+      </div>
+      <div>
+        <label for="veld-bericht" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Uw bericht / Uw vraag <span style="color: #cc0000;">*</span></label>
+        <textarea id="veld-bericht" name="bericht" required="required" style="width: 100%; box-sizing: border-box; height: 120px; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333; resize: vertical;"></textarea>
+      </div>
+      <sc-if value="{{ contactSent }}" hint-placeholder-val="{{ false }}">
+        <p style="margin: 15px 0 0 0; font-weight: 600; color: #1F3864;">Bedankt! Let op: in deze offline kopie wordt het formulier niet echt verzonden.</p>
+      </sc-if>
+      <button type="submit" style="margin-top: 20px; border: none; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-family: inherit; font-weight: 700; font-size: 14px; line-height: 1; cursor: pointer;" style-hover="background-color: #fefefe;">Stuur me een bericht</button>
+    </form>
+
+    <sc-if value="{{ showNewsletter }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ submitNewsletter }}" novalidate="novalidate" style="border: 8px solid rgba(161,86,91,0.58); border-radius: 10px; padding: 10px 20px 25px 20px; box-sizing: border-box; display: flex; flex-direction: column; height: 100%;">
+        <div>
+          <label style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Naam <span style="color: #cc0000;">*</span></label>
+          <div style="display: flex; gap: 10px;">
+            <div style="flex: 1;">
+              <input type="text" id="nb-voornaam" name="voornaam" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+              <label for="nb-voornaam" style="display: block; font-size: 12px; color: #666666; margin-top: 2px;">Voornaam</label>
+            </div>
+            <div style="flex: 1;">
+              <input type="text" id="nb-achternaam" name="achternaam" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+              <label for="nb-achternaam" style="display: block; font-size: 12px; color: #666666; margin-top: 2px;">Achternaam</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="nb-email" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">E-mail <span style="color: #cc0000;">*</span></label>
+          <input type="email" id="nb-email" name="nb-email" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+        </div>
+        <div>
+          <label for="nb-telefoon" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Telefoonnummer <span style="color: #cc0000;">*</span></label>
+          <input type="text" id="nb-telefoon" name="nb-telefoon" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+        </div>
+        <div>
+          <label style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Ik wil mij inschrijven voor <span style="color: #cc0000;">*</span></label>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <label for="nb-optie-1" style="display: flex; align-items: flex-start; gap: 8px; font-size: 15px; cursor: pointer;"><input type="checkbox" id="nb-optie-1" name="inschrijving" value="nieuwsbrief" style="margin-top: 5px;">de Nieuwsbrief</label>
+            <label for="nb-optie-2" style="display: flex; align-items: flex-start; gap: 8px; font-size: 15px; cursor: pointer;"><input type="checkbox" id="nb-optie-2" name="inschrijving" value="nature-qigong" style="margin-top: 5px;">Wekelijks Nature Qigong (Geldermalsen)</label>
+            <label for="nb-optie-3" style="display: flex; align-items: flex-start; gap: 8px; font-size: 15px; cursor: pointer;"><input type="checkbox" id="nb-optie-3" name="inschrijving" value="sleutels-geluk" style="margin-top: 5px;">De sleutels tot Geluk – 8 weekse thuis cursus</label>
+          </div>
+        </div>
+        <div>
+          <label for="nb-opmerkingen" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Opmerkingen</label>
+          <textarea id="nb-opmerkingen" name="opmerkingen" style="width: 100%; box-sizing: border-box; height: 90px; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333; resize: vertical;"></textarea>
+        </div>
+        <sc-if value="{{ newsletterSent }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 15px 0 0 0; font-weight: 600; color: #1F3864;">Bedankt! Let op: in deze offline kopie wordt het formulier niet echt verzonden.</p>
+        </sc-if>
+        <button type="submit" style="margin-top: 20px; border: none; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-family: inherit; font-weight: 700; font-size: 14px; line-height: 1; cursor: pointer;" style-hover="background-color: #fefefe;">Verstuur</button>
+      </form>
+    </sc-if>
+  </section>
+
+</main>
+
+<footer data-screen-label="Footer" style="padding: 60px 35px 15px 35px;">
+  <p style="margin: 0 0 15px 0; text-align: center;">Copyright © 2026 Ko-Chi qigong</p>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <span style="font-size: 13px;">Made by Robin&nbsp;&nbsp;</span>
+    <a href="https://www.linkedin.com/in/robin-koolen/" target="_blank" rel="noopener noreferrer" aria-label="Linkedin" style="display: inline-flex; align-items: center; gap: 6px; color: #1c86c6; text-decoration: none; font-size: 13px;" style-hover="color: #16699b;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+      <span>Linkedin</span>
+    </a>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showNewsletterForm&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Formulieren&quot;},&quot;linkedinUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.linkedin.com/in/petra-koolen-7aaa9b13/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+class Component extends DCLogic {
+  state = { orgOpen: false, partOpen: false, isMobile: false, mobileMenuOpen: false, contactSent: false, newsletterSent: false };
+
+  componentDidMount() {
+    this.mq = window.matchMedia('(max-width: 900px)');
+    this.updateMq = () => this.setState({ isMobile: this.mq.matches });
+    this.updateMq();
+    this.mq.addEventListener('change', this.updateMq);
+  }
+
+  componentWillUnmount() {
+    if (this.mq) this.mq.removeEventListener('change', this.updateMq);
+  }
+
+  renderVals() {
+    const isMobile = this.state.isMobile;
+    return {
+      navStyle: { display: isMobile ? 'none' : 'flex', alignItems: 'center', flexWrap: 'wrap' },
+      hamburgerStyle: { display: isMobile ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', border: 'none', background: 'transparent', cursor: 'pointer', color: '#1F3864', padding: 0 },
+      showMobileMenu: isMobile && this.state.mobileMenuOpen,
+      toggleMobileMenu: () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen })),
+      orgOpen: this.state.orgOpen,
+      openOrg: () => this.setState({ orgOpen: true }),
+      closeOrg: () => this.setState({ orgOpen: false }),
+      partOpen: this.state.partOpen,
+      openPart: () => this.setState({ partOpen: true }),
+      closePart: () => this.setState({ partOpen: false }),
+      introColStyle: { marginTop: isMobile ? '30px' : '60px' },
+      contactColStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '30px' : '40px', marginTop: isMobile ? '50px' : '70px', alignItems: 'stretch' },
+      formColStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '45fr 55fr', gap: '20px', alignItems: 'stretch', marginTop: isMobile ? '50px' : '70px', padding: '5px 5px 40px 14px' },
+      contactSent: this.state.contactSent,
+      newsletterSent: this.state.newsletterSent,
+      submitContact: (e) => { e.preventDefault(); this.setState({ contactSent: true }); },
+      submitNewsletter: (e) => { e.preventDefault(); this.setState({ newsletterSent: true }); },
+      showNewsletter: this.props.showNewsletterForm ?? true,
+      linkedinUrl: this.props.linkedinUrl ?? 'https://www.linkedin.com/in/petra-koolen-7aaa9b13/'
+    };
+  }
+}
+</script>
+</body>
+</html>
