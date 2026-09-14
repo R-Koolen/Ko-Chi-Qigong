@@ -11,7 +11,7 @@
   <title>Tarieven - Ko-Chi qigong</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Cinzel+Decorative:wght@400;700;900&amp;family=Homenaje&amp;family=Charm:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;family=Cinzel+Decorative:wght@400;700;900&amp;display=swap">
   <style>
     html { font-size: 93.75%; }
     body { margin: 0; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #1F3864; background-color: #ffffff; background-image: radial-gradient(rgb(211,182,184) 0%, rgba(212,182,184,0.36) 100%); background-attachment: scroll; min-height: 100vh; }
@@ -84,12 +84,13 @@
 
 <main style="max-width: 1240px; margin: 0 auto; padding: 0 25px 10px 25px; line-height: 1.86;">
 
-  <section data-screen-label="Tarieven intro" style="{{ introColStyle }}">
-    <div style="padding-top: 20px;">
-      <img src="assets/strandpalen-beach.jpg" alt="Strandpalen aan zee" style="display: block; width: 100%; height: auto;">
+  <section data-screen-label="Tarieven intro" style="{{ introSectionStyle }}">
+    <h1 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.09em; font-kerning: none; font-variant-ligatures: none; font-size: 42px; line-height: 1.2; color: #A1565B; text-align: center;">TARIEVEN</h1>
+    <div style="{{ introColStyle }}">
+    <div>
+      <img src="assets/strandpalen-beach.jpg" alt="Strandpalen aan zee" style="display: block; width: 100%; height: auto; border-radius: 10px;">
     </div>
-    <div style="padding-top: 15px;">
-      <h1 style="margin: 0 0 25px 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 42px; line-height: 1.2; color: #A1565B; text-align: center; letter-spacing: 2px;">TARIEVEN</h1>
+    <div>
 
       <h3 style="margin: 0 0 6px 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; color: #1F3864;">Qigong</h3>
       <ul style="margin: 0 0 20px 0; padding-left: 22px;">
@@ -104,7 +105,7 @@
       <p>Op locatie is mogelijk. Bij de tarieven komen dan reistijd en reiskosten in overleg erbij.<br>Workshop in overleg en op maat.</p>
 
       <h3 style="margin: 30px 0 4px 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; color: #1F3864;">Coaching</h3>
-      <p style="margin: 0 0 20px 0; font-style: italic;">live of online</p>
+      <p style="margin: 0 0 20px 0; font-style: normal">Live of Online</p>
       <p>Voor particulieren: € 95,- / uur</p>
       <p>Tarieven voor bedrijven op aanvraag.</p>
       <p>Een kennismakingsgesprek is kosteloos en vrijblijvend (max. 30 min.)</p>
@@ -112,7 +113,7 @@
       <h3 style="margin: 30px 0 4px 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; color: #1F3864;">Workshops</h3>
       <p>Zie voor de prijsopgave van de diverse workshops bij de desbetreffende workshop (zie agenda).</p>
 
-      <h3 style="margin: 30px 0 4px 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; color: #1F3864;">Healing</h3>
+      
       <p>Persoonlijke sessie € 50,- (max. 30 min.)</p>
 
       <h3 style="margin: 30px 0 4px 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; color: #1F3864;">Meditatie</h3>
@@ -122,10 +123,11 @@
       <p>Er zijn vaak verschillende mogelijkheden voor vergoeding van gemaakte kosten, bijvoorbeeld via je werkgever, vanuit een CAO, via de belasting of een arbodienst.</p>
       <p>Indien je vragen hebt neem dan contact met mij op.</p>
     </div>
+    </div>
   </section>
 
   <section data-screen-label="Voorwaarden" style="margin-top: 40px; text-align: center;">
-    <h2 style="margin: 0 0 24px 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 36px; line-height: 1.2; color: #A1565B; letter-spacing: 2px;">VOORWAARDEN</h2>
+    <h2 style="margin: 0 0 24px 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.09em; font-kerning: none; font-variant-ligatures: none; font-size: 36px; line-height: 1.2; color: #A1565B;">VOORWAARDEN</h2>
     <p style="text-decoration: underline;"><a href="https://www.kochi-qigong.nl/voorwaarden/" target="_blank" rel="noopener noreferrer">Klik hier om mijn voorwaarden te openen.</a></p>
   </section>
 
@@ -170,7 +172,8 @@ class Component extends DCLogic {
       hamburgerStyle: { display: isMobile ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', border: 'none', background: 'transparent', cursor: 'pointer', color: '#1F3864', padding: 0 },
       showMobileMenu: isMobile && this.state.mobileMenuOpen,
       toggleMobileMenu: () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen })),
-      introColStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '0.95fr 1.05fr', gap: isMobile ? '10px' : '55px', alignItems: 'start', marginTop: '10px' }
+      introSectionStyle: { marginTop: isMobile ? '30px' : '45px' },
+      introColStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '20px' : '45px', alignItems: 'start', marginTop: '26px' }
     };
   }
 }

@@ -11,7 +11,7 @@
   <title>Over mij - Ko-Chi qigong</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Cinzel+Decorative:wght@400;700;900&amp;family=Homenaje&amp;family=Charm:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;family=Cinzel+Decorative:wght@400;700;900&amp;display=swap">
   <style>
     html { font-size: 93.75%; }
     body { margin: 0; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #1F3864; background-color: #ffffff; background-image: radial-gradient(rgb(211,182,184) 0%, rgba(212,182,184,0.36) 100%); background-attachment: scroll; min-height: 100vh; }
@@ -37,7 +37,7 @@
           <a href="Coaching.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Coaching</a>
           <a href="Meditatie.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Meditatie</a>
           <a href="Over mij.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Over mij</a>
-          <a href="Tarieven.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Tarieven</a>
+          <a href="Tarieven v2.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Tarieven</a>
           <a href="Voor particulieren.dc.html#Agenda" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Agenda</a>
         </div>
       </sc-if>
@@ -70,7 +70,7 @@
       <a href="Coaching.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Coaching</a>
       <a href="Meditatie.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Meditatie</a>
       <a href="Over mij.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Over mij</a>
-      <a href="Tarieven.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Tarieven</a>
+      <a href="Tarieven v2.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Tarieven</a>
       <a href="Voor particulieren.dc.html#Agenda" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Agenda</a>
       <a href="Voor organisaties.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Voor Organisaties</a>
       <a href="Leiderschap en teams.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Bewust leiderschap &amp; samenwerking</a>
@@ -84,22 +84,33 @@
 
 <main style="max-width: 1240px; margin: 0 auto; padding: 0 25px; line-height: 1.86;">
 
-  <section data-screen-label="Over mij" style="{{ overMijColStyle }}">
-    <div>
-      <h4 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; font-size: 38px; line-height: 1.2; color: #A1565B; text-align: center;">Over mij</h4>
-      <div style="padding: 10px;">
+  <section data-screen-label="Over mij" style="{{ overMijSectionStyle }}">
+    <h4 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.09em; font-kerning: none; font-variant-ligatures: none; font-size: 38px; line-height: 1.2; color: #A1565B; text-align: center;">Over mij</h4>
+    <div style="{{ overMijColStyle }}">
+    <div style="{{ textColStyle }}">
+      <div style="padding: 4px 0 0 0;">
         <p><b>Mijn reis met Qigong<br></b>In 2014 ontdekte ik Qigong. Wat begon met fysieke oefeningen, groeide al snel uit tot een diepgaande innerlijke reis. De filosofie achter Qigong raakte me, niet alleen in mijn lichaam, maar ook in mijn gedachten en gevoelens. Sindsdien heb ik me intensief verdiept in deze eeuwenoude traditie, jarenlang getraind bij Chinese leermeesters en gereisd naar China om daar mijn kennis verder te verdiepen.</p>
         <p><b>Mijn fascinatie voor de psyche<br></b>Mijn interesse voor de menselijke psyche begon eerder, met mijn eerste coachopleiding in 2006. Sindsdien heb ik mijn kennis verder verbreed en verdiept met mindfulness, meditatie en wetenschappelijk onderbouwde psychologie, waaronder de studie The Science of Well-Being af aan de Yale University. Ook met de kennis en technieken uit mijn emotiecoach-opleiding, ondersteun ik klanten effectief in en bij hun emoties.</p>
         <p><b>Het beste van twee werelden<br></b>In mijn begeleiding komt het beste van twee werelden samen: professionele, bewezen methodieken én een sterk invoelende, persoonlijke benadering die lichaam, denken, emotie en energie omvat. Afhankelijk van wat jij nodig hebt, werk ik met emotiecoaching, cognitieve en gedragsgerichte technieken, mindfulness, lichaamsgerichte oefeningen, familieopstellingen en energetische verdieping.<br>Zowel als coach als Qigong-docente kijk ik naar jou als geheel. Ik werk doelgericht en gestructureerd, maar stem tegelijk zorgvuldig af op wat er onder de oppervlakte speelt. Zo herstel je je verbinding met jezelf.</p>
+        <p style="margin: 0;"><b>Jouw verandering<br></b>Zo ontstaat een veilige ruimte waarin inzicht, beweging en voelbare verandering hand in hand gaan, en je meer ontspanning, geluk en balans ervaart.<br>Verlang je naar echte verandering, niet alleen inzicht, maar ook voelbare verschuiving? Neem <u><a href="Contact.dc.html">contact</a></u> met me op voor een vrijblijvend gesprek. Samen onderzoeken we wat jij nodig hebt en welke aanpak daarbij past.</p>
       </div>
     </div>
-    <div>
-      <img src="assets/portret-petra.jpg" alt="Petra Koolen" style="display: block; width: 100%; height: auto; border-radius: 10px; margin-top: 70px;">
-      <div style="padding: 10px;">
-        <p><b>Jouw verandering<br></b>Zo ontstaat een veilige ruimte waarin inzicht, beweging en voelbare verandering hand in hand gaan, en je meer ontspanning, geluk en balans ervaart.<br>Verlang je naar echte verandering, niet alleen inzicht, maar ook voelbare verschuiving? Neem <u><a href="Contact.dc.html">contact</a></u> met me op voor een vrijblijvend gesprek. Samen onderzoeken we wat jij nodig hebt en welke aanpak daarbij past.</p>
-        <p>"<i>Je stemt je aanpak af op de behoefte: je wisselt tussen praten, laten zien, laten voelen en energetisch waarnemen, precies wat op dat moment nodig is</i>. [JvB.]"</p>
-        <p>"<i>Ik ben erg onder de indruk van de snelheid waarmee Petra mij als het ware doorhad." Ik voelde me soms ongemakkelijk bij wat ze vroeg, ik besefte dat dit nodig was om door een barrière te breken</i>. [MM] "</p>
+    <div style="{{ photoColStyle }}">
+      <img src="assets/over-mij-heaven-earth.jpg" alt="Petra Koolen" style="{{ photoStyle }}">
+    </div>
+    <div style="{{ ervaringenStyle }}">
+      <h3 style="margin: 0 0 14px 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 19px; color: #A1565B;">Ervaringen</h3>
+      <div style="{{ quotesStyle }}">
+        <div>
+          <p style="margin: 0 0 8px 0; font-style: italic;">“Je stemt je aanpak af op de behoefte: je wisselt tussen praten, laten zien, laten voelen en energetisch waarnemen, precies wat op dat moment nodig is.”</p>
+          <p style="margin: 0;">– JvB –</p>
+        </div>
+        <div>
+          <p style="margin: 0 0 8px 0; font-style: italic;">“Ik ben erg onder de indruk van de snelheid waarmee Petra mij als het ware doorhad. Ik voelde me soms ongemakkelijk bij wat ze vroeg, ik besefte dat dit nodig was om door een barrière te breken.”</p>
+          <p style="margin: 0;">– MM –</p>
+        </div>
       </div>
+    </div>
     </div>
   </section>
 
@@ -172,7 +183,7 @@ class Component extends DCLogic {
   renderVals() {
     const setTab = (n) => () => this.setState({ activeTab: n });
     const isMobile = this.state.isMobile;
-    const twoCol = (desktopRatio, extra) => ({ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : desktopRatio, gap: isMobile ? '10px' : '20px', alignItems: isMobile ? 'stretch' : 'start', ...extra });
+    const twoCol = (desktopRatio, extra) => ({ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : desktopRatio, gap: isMobile ? '20px' : '45px', alignItems: isMobile ? 'stretch' : 'start', ...extra });
     return {
       isMobile,
       isDesktop: !isMobile,
@@ -191,7 +202,15 @@ class Component extends DCLogic {
       cardsColStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: isMobile ? '30px' : '36px', marginTop: isMobile ? '50px' : '80px' },
       cardStyle: { display: 'block', textDecoration: 'none', transition: 'transform 0.25s ease' },
       agendaColStyle: twoCol('4fr 1fr', { marginTop: '80px' }),
-      overMijColStyle: twoCol('2fr 1fr', { marginTop: '80px' }),
+      overMijSectionStyle: { marginTop: isMobile ? '30px' : '34px' },
+      photoColStyle: { position: isMobile ? 'static' : 'relative', height: '100%', minHeight: isMobile ? 0 : '320px' },
+      photoStyle: isMobile
+        ? { display: 'block', width: '100%', height: 'auto', borderRadius: '10px' }
+        : { position: 'absolute', top: '4px', left: 0, width: '100%', height: 'calc(100% - 4px)', objectFit: 'cover', objectPosition: 'center 32%', borderRadius: '10px', display: 'block' },
+      ervaringenStyle: { gridColumn: '1 / -1', background: 'rgba(211,182,184,0.55)', borderRadius: '6px', padding: isMobile ? '22px 24px' : '26px 32px', marginTop: isMobile ? '10px' : '16px' },
+      quotesStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '20px' : '40px' },
+      textColStyle: { display: 'flex', flexDirection: 'column' },
+      overMijColStyle: twoCol('1fr 1fr', { marginTop: '26px', alignItems: 'stretch' }),
       showTab1: setTab(1),
       showTab2: setTab(2),
       showTab3: setTab(3),
