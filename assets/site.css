@@ -1,0 +1,148 @@
+/* Ko-Chi qigong — shared styles for every page.
+   Mobile layout kicks in at max-width: 900px (same breakpoint as the old React version). */
+
+/* ---------- Base ---------- */
+html, body { height: 100%; margin: 0; }
+html { font-size: 93.75%; }
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #1F3864;
+  background-color: #ffffff;
+  background-image: radial-gradient(rgb(211,182,184) 0%, rgba(212,182,184,0.36) 100%);
+  background-attachment: scroll;
+  min-height: 100vh;
+}
+a { color: #1f3864; }
+a:hover, a:focus { color: #5b739e; }
+::selection { background-color: #d3b6b8; color: #000000; }
+p { margin: 0 0 20px 0; }
+
+/* Blocks that are shown/hidden by page state or screen width (rules live in each page's <style>).
+   They never create a box of their own, so layout is the same as without the wrapper. */
+x-if, x-for { display: contents; }
+
+/* Decorative heading font (Cinzel Decorative), used for page titles and card titles */
+.font-display {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  font-kerning: none;
+  font-variant-ligatures: none;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background-image: linear-gradient(81deg, rgba(212,182,184,0.92) 4%, rgb(212,182,184) 100%);
+  min-height: 91px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 35px;
+  position: relative;
+  z-index: 20;
+}
+.site-logo-wrap { display: flex; align-items: center; }
+.site-logo { display: inline-flex; }
+.site-logo img { display: block; width: 237px; height: 58px; }
+
+/* Desktop navigation */
+.site-nav { display: flex; align-items: center; flex-wrap: wrap; }
+.site-nav .nav-link {
+  display: block;
+  padding: 0 20px;
+  line-height: 91px;
+  font-size: 15px;
+  color: #284371;
+  text-decoration: none;
+  white-space: nowrap; /* never break "Voor Particulieren ▾" over two lines */
+}
+.site-nav .nav-link:hover { color: #5b739e; }
+/* Highlighted item = the section of the current page */
+.site-nav .nav-link.is-active { color: #5b739e; }
+.site-nav .nav-link.is-active:hover { color: #1F3864; }
+
+/* Dropdowns (open on hover, and on keyboard focus) */
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 91px;
+  left: 0;
+  min-width: 200px;
+  background: #f6ebec;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+  border-top: 2px solid #d3b6b8;
+  flex-direction: column;
+  z-index: 40;
+}
+.nav-dropdown-menu.is-wide { min-width: 260px; }
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu { display: flex; }
+.nav-dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: #284371;
+  text-decoration: none;
+}
+.nav-dropdown-menu a:hover { color: #5b739e; background: #ecdcde; }
+
+/* Mobile hamburger + menu */
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #1F3864;
+  padding: 0;
+}
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 91px;
+  left: 0;
+  right: 0;
+  background: #fefefe;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  flex-direction: column;
+  z-index: 30;
+}
+.mobile-menu a {
+  display: block;
+  padding: 14px 20px;
+  font-size: 15px;
+  color: #284371;
+  text-decoration: none;
+  border-bottom: 1px solid #eee2e3;
+}
+.mobile-menu a.sub { padding-left: 36px; font-size: 14px; }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a.is-active { color: #5b739e; }
+
+@media (max-width: 900px) {
+  .site-nav { display: none; }
+  .menu-toggle { display: flex; }
+  .site-header.menu-open .mobile-menu { display: flex; }
+}
+
+/* ---------- Footer ---------- */
+/* Footer padding differs per page, so it stays as an inline style on <footer>. */
+.site-footer p { margin: 0 0 15px 0; text-align: center; }
+.footer-credit { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.footer-credit .made-by { font-size: 13px; }
+.footer-credit a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #1c86c6;
+  text-decoration: none;
+  font-size: 13px;
+}
+.footer-credit a:hover { color: #16699b; }

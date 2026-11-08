@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://r-koolen.github.io/Ko-Chi-Qigong-/sitemap.xml
