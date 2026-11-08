@@ -79,7 +79,18 @@
   // ---- inspiratie-stuk.html?id=…: one piece, its PDF and related pieces ----
   if (page === 'inspiratie-stuk') {
     var id = new URLSearchParams(window.location.search).get('id');
-    var item = ITEMS.filter(function (i) { return i.id === id; })[0] || ITEMS[0];
+    // no ?id → newest piece (matches the static HTML); unknown ?id → "niet gevonden"
+    var item = id ? ITEMS.filter(function (i) { return i.id === id; })[0] : ITEMS[0];
+    if (!item) {
+      document.title = 'Stuk niet gevonden - Ko-Chi qigong';
+      main.innerHTML =
+        '<section style="max-width: 640px; margin: 60px auto; text-align: center; color: #1F3864;">' +
+          '<h1 style="margin: 0; font-family: \'Cinzel Decorative\', serif; font-weight: 700; letter-spacing: 0.05em; font-size: 30px; line-height: 1.2;">Stuk niet gevonden</h1>' +
+          '<p style="margin: 18px 0 28px;">Dit inspiratiestuk bestaat niet (meer). Misschien is de link verouderd of zit er een typfout in.</p>' +
+          '<a class="hv0" href="inspiratie.html" style="display: inline-flex; align-items: center; padding: 14px 26px; border-radius: 100px; background-color: #1F3864; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 14px; line-height: 1;">Alle inspiratie</a>' +
+        '</section>';
+      return;
+    }
     var s = SERIES[item.s];
     document.title = s.name + ': ' + item.label + ' - Ko-Chi qigong';
     var state = { pdfLoading: true, pdfError: false };
