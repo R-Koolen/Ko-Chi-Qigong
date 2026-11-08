@@ -50,13 +50,13 @@
           <a href="Leiderschap en teams.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Leiderschap</a>
           <a href="Coaching-professionals.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Coaching</a>
           <a href="Vitaliteit-werkvloer.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Vitaliteit</a>
-          <a href="Voor organisaties v2.dc.html#Visie" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Mijn visie</a>
+          <a href="Mijn visie.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Mijn visie</a>
           <a href="Voor organisaties v2.dc.html#Kennismaken" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Kennismaken</a>
         </div>
       </sc-if>
     </div>
 
-    <a href="#" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Inspiratie</a>
+    <a href="Inspiratie.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Inspiratie</a>
     <a href="Contact.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Contact</a>
   </nav>
   <button type="button" aria-label="Menu" onClick="{{ toggleMobileMenu }}" style="{{ hamburgerStyle }}">
@@ -76,7 +76,8 @@
       <a href="Leiderschap en teams.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Leiderschap</a>
       <a href="Coaching-professionals.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Coaching</a>
       <a href="Vitaliteit-werkvloer.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Vitaliteit</a>
-      <a href="#" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Inspiratie</a>
+      <a href="Mijn visie.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Mijn visie</a>
+      <a href="Inspiratie.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Inspiratie</a>
       <a href="Contact.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none;">Contact</a>
     </div>
   </sc-if>
@@ -85,7 +86,7 @@
 <main style="max-width: 1240px; margin: 0 auto; padding: 0 25px; line-height: 1.86;">
 
   <section data-screen-label="Intro" style="{{ introColStyle }}">
-    <h1 style="{{ h1Style }}">Meer rust - Meer helderheid - Meer verbinding - Meer jezelf</h1>
+    <h1 style="{{ h1Style }}">Meer&nbsp;rust - Meer&nbsp;helderheid - Meer&nbsp;verbinding - Meer&nbsp;jezelf</h1>
     <p style="{{ quoteStyle }}">“Verandering begint wanneer je leert waarnemen wat er werkelijk in je leeft.”</p>
     <div style="{{ heroColStyle }}">
       <div style="{{ heroImgBoxStyle }}"><img src="assets/petra-hedge.jpg" alt="Petra Koolen" style="display: block; width: 100%; margin-top: -17.6%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 54% 75%"></div>
@@ -165,7 +166,7 @@ class Component extends DCLogic {
         : { margin: '26px 0 0 0', fontSize: '18px', lineHeight: 1.6, width: 'min(775px, 100%)' },
       para2Style: isMobile
         ? { margin: '18px 0 0 0', fontSize: '16px', lineHeight: 1.6 }
-        : { margin: 0, fontSize: '18px', lineHeight: 1.6, width: 'min(766px, 100%)' },
+        : { margin: '18px 0 0 0', fontSize: '18px', lineHeight: 1.6, width: 'min(766px, 100%)' },
       introColStyle: { marginTop: isMobile ? '30px' : '60px' },
       heroColStyle: { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '34% 1fr', gap: isMobile ? '24px' : '52px', alignItems: 'start', marginTop: isMobile ? '28px' : '44px' },
       heroBelowStyle: { marginTop: isMobile ? '26px' : '40px' },

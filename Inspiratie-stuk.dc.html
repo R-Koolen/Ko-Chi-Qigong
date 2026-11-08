@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Inspiratie - Ko-Chi qigong</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;family=Cinzel+Decorative:wght@400;700;900&amp;display=swap">
+  <style>
+    html { font-size: 93.75%; }
+    body { margin: 0; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #1F3864; background-color: #ffffff; background-image: radial-gradient(rgb(211,182,184) 0%, rgba(212,182,184,0.36) 100%); background-attachment: scroll; min-height: 100vh; }
+    a { color: #1f3864; }
+    a:hover, a:focus { color: #5b739e; }
+    ::selection { background-color: #d3b6b8; color: #000000; }
+    p { margin: 0 0 20px 0; }
+  </style>
+</helmet>
+
+<header data-screen-label="Header" style="background-image: linear-gradient(81deg, rgba(212,182,184,0.92) 4%, rgb(212,182,184) 100%); min-height: 91px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 35px; position: relative; z-index: 20;">
+  <div style="display: flex; align-items: center;">
+    <a href="Home v2.dc.html" style="display: inline-flex;"><img src="assets/logo.png" alt="Ko-Chi qigong" width="237" height="58" style="display: block; width: 237px; height: 58px;"></a>
+  </div>
+  <nav aria-label="Site navigatie" style="{{ navStyle }}">
+    <a href="Home v2.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Home</a>
+    <div style="position: relative;" onMouseEnter="{{ openPart }}" onMouseLeave="{{ closePart }}">
+      <a href="Voor particulieren.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Voor Particulieren ▾</a>
+      <sc-if value="{{ partOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; top: 91px; left: 0; min-width: 200px; background: #f6ebec; box-shadow: 0 5px 20px rgba(0,0,0,0.12); border-top: 2px solid #d3b6b8; display: flex; flex-direction: column; z-index: 40;">
+          <a href="Qigong.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Qigong</a>
+          <a href="Coaching.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Coaching</a>
+          <a href="Meditatie.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Meditatie</a>
+          <a href="Over mij.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Over mij</a>
+          <a href="Tarieven v2.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Tarieven</a>
+          <a href="Voor particulieren.dc.html#Agenda" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Agenda</a>
+        </div>
+      </sc-if>
+    </div>
+    <div style="position: relative;" onMouseEnter="{{ openOrg }}" onMouseLeave="{{ closeOrg }}">
+      <a href="Voor organisaties v2.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Voor Organisaties ▾</a>
+      <sc-if value="{{ orgOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; top: 91px; left: 0; min-width: 260px; background: #f6ebec; box-shadow: 0 5px 20px rgba(0,0,0,0.12); border-top: 2px solid #d3b6b8; display: flex; flex-direction: column; z-index: 40;">
+          <a href="Leiderschap en teams.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Leiderschap</a>
+          <a href="Coaching-professionals.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Coaching</a>
+          <a href="Vitaliteit-werkvloer.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Vitaliteit</a>
+          <a href="Mijn visie.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Mijn visie</a>
+          <a href="Voor organisaties v2.dc.html#Kennismaken" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Kennismaken</a>
+        </div>
+      </sc-if>
+    </div>
+    <a href="Inspiratie.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #5b739e; text-decoration: none;" style-hover="color: #1F3864;">Inspiratie</a>
+    <a href="Contact.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Contact</a>
+  </nav>
+  <button type="button" aria-label="Menu" onClick="{{ toggleMobileMenu }}" style="{{ hamburgerStyle }}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+  </button>
+  <sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; top: 91px; left: 0; right: 0; background: #fefefe; box-shadow: 0 10px 20px rgba(0,0,0,0.15); display: flex; flex-direction: column; z-index: 30;">
+      <a href="Home v2.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Home</a>
+      <a href="Voor particulieren.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Voor Particulieren</a>
+      <a href="Voor organisaties v2.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Voor Organisaties</a>
+      <a href="Inspiratie.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #5b739e; text-decoration: none; border-bottom: 1px solid #eee2e3;">Inspiratie</a>
+      <a href="Contact.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none;">Contact</a>
+    </div>
+  </sc-if>
+</header>
+
+<main style="max-width: 1240px; margin: 0 auto; padding: 0 25px 40px 25px; line-height: 1.7;">
+  <nav aria-label="Kruimelpad" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; font-size: 13px;">
+    <a href="Inspiratie.dc.html" style="color: #1F3864;">Inspiratie</a>
+    <span>›</span>
+    <span>{{ series.name }}</span>
+  </nav>
+  <div data-screen-label="Beeld" style="position: relative; margin-top: 16px;">
+    <img src="{{ series.photo }}" alt="" style="display: block; width: 100%; aspect-ratio: 21 / 7; min-height: 200px; object-fit: cover; border-radius: 12px;">
+    <img src="{{ item.img }}" alt="{{ item.label }}" style="position: absolute; left: 32px; bottom: -36px; display: block; width: 280px; max-width: 60%; aspect-ratio: 8 / 3; object-fit: contain; padding: 8px; box-sizing: border-box; border-radius: 6px; box-shadow: 0 10px 28px rgba(31,56,100,0.25); background: #ffffff;">
+  </div>
+  <div style="{{ mainGridStyle }}">
+    <article data-screen-label="Stuk" style="display: flex; flex-direction: column; gap: 10px; min-width: 0;">
+      <span style="{{ tagStyle }}">{{ series.name }}</span>
+      <h1 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.05em; font-size: 34px; line-height: 1.2; color: #1F3864;">{{ item.label }}</h1>
+      <sc-if value="{{ hasPdf }}" hint-placeholder-val="{{ true }}">
+        <sc-if value="{{ pdfLoading }}" hint-placeholder-val="{{ true }}">
+          <div style="width: 100%; aspect-ratio: 1 / 1.3; margin-top: 16px; border-radius: 10px; background: rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center; font-size: 14px;">PDF laden…</div>
+        </sc-if>
+        <div ref="{{ pdfRef }}" style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;"></div>
+        
+      </sc-if>
+      <sc-if value="{{ noPdf }}" hint-placeholder-val="{{ false }}">
+        <div style="width: 100%; aspect-ratio: 1 / 1.3; margin-top: 16px; border-radius: 10px; background: repeating-linear-gradient(135deg, #f4ecec 0px, #f4ecec 10px, #ece0e1 10px, #ece0e1 20px); display: flex; align-items: center; justify-content: center;">
+          <span style="font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: #1F3864; background: rgba(255,255,255,0.85); padding: 6px 10px; border-radius: 4px;">PDF volgt</span>
+        </div>
+      </sc-if>
+    </article>
+    <aside style="{{ asideStyle }}">
+      <div style="background: #1F3864; color: #ffffff; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 18px;">
+        <h2 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.04em; font-size: 21px; line-height: 1.3; color: #ffffff;">{{ series.ctaTitle }}</h2>
+        <a href="{{ series.ctaHref }}" style="align-self: flex-start; display: inline-flex; align-items: center; padding: 14px 26px; border-radius: 100px; background-color: #d3b6b8; color: #000000; text-decoration: none; font-weight: 700; font-size: 14px; line-height: 1;" style-hover="background-color: #fefefe; color: #000000;">{{ series.cta }}</a>
+      </div>
+      <a href="Over mij.dc.html" style="display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 12px; background: rgba(255,255,255,0.6); text-decoration: none; color: #1F3864;" style-hover="background: rgba(255,255,255,0.85); color: #1F3864;">
+        <img src="assets/portret-petra.jpg" alt="" style="display: block; width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+        <span style="display: flex; flex-direction: column; font-size: 14px; line-height: 1.4;"><strong>Petra Koolen</strong><span>Over mij</span></span>
+      </a>
+      
+    </aside>
+  </div>
+  <section data-screen-label="Meer uit deze reeks" style="margin-top: 60px;">
+    <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px;">
+      <h2 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.05em; font-size: 24px; line-height: 1.2; color: #A1565B;">Meer uit deze reeks</h2>
+      <a href="Inspiratie.dc.html" style="font-size: 14px; font-weight: 600; color: #1F3864;">Alle inspiratie</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px; margin-top: 22px;">
+      <sc-for list="{{ related }}" as="it" hint-placeholder-count="4">
+        <a href="{{ it.href }}" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;" style-hover="color: #5b739e;">
+          <img src="{{ it.img }}" alt="{{ it.label }}" style="display: block; width: 100%; aspect-ratio: 8 / 3; object-fit: contain; background: #ffffff; padding: 8px; box-sizing: border-box;">
+          <span style="font-size: 13px; font-weight: 600; line-height: 1.3;">{{ it.label }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+</main>
+
+<footer data-screen-label="Footer" style="padding: 40px 35px 15px 35px;">
+  <p style="margin: 0 0 15px 0; text-align: center;">Copyright © 2026 Ko-Chi qigong</p>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <span style="font-size: 13px;">Made by Robin&nbsp;&nbsp;</span>
+    <a href="https://www.linkedin.com/in/robin-koolen/" target="_blank" rel="noopener noreferrer" aria-label="Linkedin" style="display: inline-flex; align-items: center; gap: 6px; color: #1c86c6; text-decoration: none; font-size: 13px;" style-hover="color: #16699b;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+      <span>Linkedin</span>
+    </a>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SERIES = {
+  energie: { key: 'energie', name: 'Bewust-zijn met energie', unit: 'edities', color: '#A1565B', photo: 'assets/meditatie-clouds.jpg', ctaTitle: 'Doe mee met de volgende editie', cta: 'Schrijf je in', ctaHref: 'Voor particulieren.dc.html#Agenda' },
+  geluk: { key: 'geluk', name: 'Ontdek de sleutels tot geluk', unit: 'edities', color: '#5b739e', photo: 'assets/strandpalen-beach.jpg', ctaTitle: 'Doe mee met de volgende cursus', cta: 'Schrijf je in', ctaHref: 'Voor particulieren.dc.html#Agenda' },
+  nb: { key: 'nb', name: 'Nieuwsbrief', unit: 'nummers', color: '#1F3864', photo: 'assets/hero-china.jpg', ctaTitle: 'Ontvang de nieuwsbrief', cta: 'Aanmelden', ctaHref: 'Contact.dc.html' }
+};
+const ITEMS = [
+  ['e7','energie','28 juni 2026',2026,'energie-28juni-2026','energie-28-juni-2026'],
+  ['n10','nb','Het zaadje',2026,'nb-zaadje-hq','nieuwsbrief-het-zaadje'],
+  ['e6','energie','26 april 2026',2026,'energie-26april-2026','energie-26-april-2026'],
+  ['n9','nb','Eindejaar: Wie weet?',2025,'nb-eindejaar'],
+  ['g4','geluk','Editie 2025',2025,'geluk-w8v2'],
+  ['e5','energie','November 2024',2024,'nb-november'],
+  ['e4','energie','1 juni 2024',2024,'energie-juni2024-hq','energie-1-juni-2024'],
+  ['g3','geluk','Editie 2024',2024,'geluk-2024'],
+  ['n8','nb','Januari 2024',2024,'nb-jan2024'],
+  ['e3','energie','Februari 2024',2024,'energie-2024'],
+  ['g2','geluk','Najaar 2023',2023,'geluk-2023'],
+  ['e2','energie','Oktober 2023',2023,'energie-2023'],
+  ['n7','nb','September 2023',2023,'nb-sep2023'],
+  ['n6','nb','April 2023',2023,'nb-apr2023'],
+  ['e1','energie','Mei en juni 2023',2023,'energie-meijuni2023'],
+  ['g1','geluk','Week 8: Gelukkiger worden',2023,'geluk-w8'],
+  ['n5','nb','Oktober 2022',2022,'nb-oktober'],
+  ['n4','nb','Augustus 2022',2022,'nb-augustus'],
+  ['n3','nb','April 2022',2022,'nb-april'],
+  ['n2','nb','Januari 2022',2022,'nb-januari']
+].map(([id, s, label, year, img, pdf]) => ({ id, s, label, year, img: 'assets/insp/' + img + '.png', pdf: pdf ? 'assets/pdf/' + pdf + '.pdf' : null, href: 'Inspiratie-stuk.dc.html?id=' + id }));
+
+class Component extends DCLogic {
+  state = { isMobile: false, mobileMenuOpen: false, partOpen: false, orgOpen: false };
+
+  componentDidMount() {
+    this.mq = window.matchMedia('(max-width: 900px)');
+    this.updateMq = () => this.setState({ isMobile: this.mq.matches });
+    this.updateMq();
+    this.mq.addEventListener('change', this.updateMq);
+  }
+  componentWillUnmount() { if (this.mq) this.mq.removeEventListener('change', this.updateMq); }
+  baseVals(m) {
+    return {
+      navStyle: { display: m ? 'none' : 'flex', alignItems: 'center', flexWrap: 'wrap' },
+      hamburgerStyle: { display: m ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', border: 'none', background: 'transparent', cursor: 'pointer', color: '#1F3864', padding: 0 },
+      showMobileMenu: m && this.state.mobileMenuOpen,
+      toggleMobileMenu: () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen })),
+      partOpen: this.state.partOpen, openPart: () => this.setState({ partOpen: true }), closePart: () => this.setState({ partOpen: false }),
+      orgOpen: this.state.orgOpen, openOrg: () => this.setState({ orgOpen: true }), closeOrg: () => this.setState({ orgOpen: false })
+    };
+  }
+
+  pdfRef = React.createRef();
+  getItem() {
+    const id = new URLSearchParams(window.location.search).get('id') || 'e7';
+    return ITEMS.find(i => i.id === id) || ITEMS[0];
+  }
+  async renderPdf() {
+    const item = this.getItem();
+    if (!item.pdf || this.pdfDone) return;
+    this.pdfDone = true;
+    try {
+      const base = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/';
+      const pdfjs = await import(base + 'pdf.min.mjs');
+      pdfjs.GlobalWorkerOptions.workerSrc = base + 'pdf.worker.min.mjs';
+      const doc = await pdfjs.getDocument(new URL(item.pdf, window.location.href).href).promise;
+      const el = this.pdfRef.current;
+      if (!el) return;
+      el.innerHTML = '';
+      const dpr = window.devicePixelRatio || 1;
+      for (let p = 1; p <= doc.numPages; p++) {
+        const page = await doc.getPage(p);
+        const w = el.clientWidth || 800;
+        const vp0 = page.getViewport({ scale: 1 });
+        const vp = page.getViewport({ scale: (w / vp0.width) * dpr });
+        const c = document.createElement('canvas');
+        c.width = vp.width; c.height = vp.height;
+        c.style.cssText = 'display:block;width:100%;height:auto;border-radius:10px;background:#fff;box-shadow:0 4px 20px rgba(31,56,100,0.1);';
+        el.appendChild(c);
+        await page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+        if (p === 1) this.setState({ pdfLoading: false });
+      }
+    } catch (e) {
+      console.warn('PDF render failed', e);
+      this.setState({ pdfLoading: false, pdfError: true });
+    }
+  }
+  renderVals() {
+    const m = this.state.isMobile;
+    const item = this.getItem();
+    if (item.pdf && !this.pdfDone) setTimeout(() => this.renderPdf(), 0);
+    const series = SERIES[item.s];
+    const url = encodeURIComponent(window.location.href);
+    return {
+      ...this.baseVals(m), item, series,
+      hasPdf: !!item.pdf && !this.state.pdfError, noPdf: !item.pdf || !!this.state.pdfError, pdfRef: this.pdfRef,
+      pdfLoading: this.state.pdfLoading !== false,
+      related: ITEMS.filter(i => i.s === item.s && i.id !== item.id).slice(0, 8),
+      tagStyle: { fontSize: '12px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: series.color },
+      mainGridStyle: { display: 'grid', gridTemplateColumns: m ? '1fr' : 'minmax(0, 2fr) minmax(260px, 1fr)', gap: m ? '32px' : '48px', marginTop: '70px', alignItems: 'start' },
+      asideStyle: { display: 'flex', flexDirection: 'column', gap: '16px', position: m ? 'static' : 'sticky', top: '24px' },
+      shareLinkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + url,
+      shareFacebook: 'https://www.facebook.com/sharer/sharer.php?u=' + url
+    };
+  }
+}
+</script>
+</body>
+</html>

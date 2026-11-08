@@ -50,13 +50,13 @@
           <a href="Leiderschap en teams.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Leiderschap</a>
           <a href="Coaching-professionals.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Coaching</a>
           <a href="Vitaliteit-werkvloer.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Vitaliteit</a>
-          <a href="Voor organisaties v2.dc.html#Visie" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Mijn visie</a>
+          <a href="Mijn visie.dc.html" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Mijn visie</a>
           <a href="Voor organisaties v2.dc.html#Kennismaken" style="display: block; padding: 12px 20px; font-size: 14px; color: #284371; text-decoration: none;" style-hover="color: #5b739e; background: #ecdcde;">Kennismaken</a>
         </div>
       </sc-if>
     </div>
 
-    <a href="#" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Inspiratie</a>
+    <a href="Inspiratie.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #284371; text-decoration: none;" style-hover="color: #5b739e;">Inspiratie</a>
     <a href="Contact.dc.html" style="display: block; padding: 0 20px; line-height: 91px; font-size: 15px; color: #5b739e; text-decoration: none;" style-hover="color: #1F3864;">Contact</a>
   </nav>
   <button type="button" aria-label="Menu" onClick="{{ toggleMobileMenu }}" style="{{ hamburgerStyle }}">
@@ -76,7 +76,8 @@
       <a href="Leiderschap en teams.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Leiderschap</a>
       <a href="Coaching-professionals.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Coaching</a>
       <a href="Vitaliteit-werkvloer.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Vitaliteit</a>
-      <a href="#" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Inspiratie</a>
+      <a href="Mijn visie.dc.html" style="display: block; padding: 14px 20px 14px 36px; font-size: 14px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">— Mijn visie</a>
+      <a href="Inspiratie.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #284371; text-decoration: none; border-bottom: 1px solid #eee2e3;">Inspiratie</a>
       <a href="Contact.dc.html" style="display: block; padding: 14px 20px; font-size: 15px; color: #5b739e; text-decoration: none;">Contact</a>
     </div>
   </sc-if>
@@ -148,54 +149,56 @@
   <div id="formulier" style="height: 0;"></div>
 
   <section data-screen-label="Formulieren" style="{{ formColStyle }}">
-    <form onSubmit="{{ submitContact }}" novalidate="novalidate" style="border: 10px solid rgba(161,86,91,0.58); border-radius: 10px; padding: 10px 20px 25px 20px; box-sizing: border-box; display: flex; flex-direction: column; height: 100%;">
+    <form onSubmit="{{ submitContact }}" novalidate="novalidate" style="background: rgba(255,255,255,0.82); border-radius: 14px; padding: 32px clamp(22px, 4vw, 34px); box-shadow: 0 10px 30px rgba(31,56,100,0.08); box-sizing: border-box; display: flex; flex-direction: column; height: 100%;">
+      <p style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.06em; font-size: 20px; line-height: 1.3; color: #A1565B;">Stel je vraag</p>
       <div>
-        <label for="veld-naam" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Naam <span style="color: #cc0000;">*</span></label>
-        <input type="text" id="veld-naam" name="naam" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+        <label for="veld-naam" style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">Naam <span style="color: #cc0000;">*</span></label>
+        <input type="text" id="veld-naam" name="naam" required="required" style="width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
       </div>
       <div>
-        <label for="veld-email" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Email <span style="color: #cc0000;">*</span></label>
-        <input type="email" id="veld-email" name="email" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+        <label for="veld-email" style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">Email <span style="color: #cc0000;">*</span></label>
+        <input type="email" id="veld-email" name="email" required="required" style="width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
       </div>
       <div>
-        <label for="veld-telefoon" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Telefoonnummer</label>
-        <input type="text" id="veld-telefoon" name="telefoon" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+        <label for="veld-telefoon" style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">Telefoonnummer</label>
+        <input type="text" id="veld-telefoon" name="telefoon" style="width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
       </div>
       <div>
-        <label for="veld-bericht" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Uw bericht / Uw vraag <span style="color: #cc0000;">*</span></label>
-        <textarea id="veld-bericht" name="bericht" required="required" style="width: min(100%, 486px); box-sizing: border-box; height: 250px; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333; resize: vertical"></textarea>
+        <label for="veld-bericht" style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">Uw bericht / Uw vraag <span style="color: #cc0000;">*</span></label>
+        <textarea id="veld-bericht" name="bericht" required="required" style="width: 100%; box-sizing: border-box; height: 250px; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333; resize: vertical"></textarea>
       </div>
       <sc-if value="{{ contactSent }}" hint-placeholder-val="{{ false }}">
         <p style="margin: 15px 0 0 0; font-weight: 600; color: #1F3864;">Bedankt! Let op: in deze offline kopie wordt het formulier niet echt verzonden.</p>
       </sc-if>
-      <button type="submit" style="margin-top: 20px; border: none; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-family: inherit; font-weight: 700; font-size: 14px; line-height: 1; cursor: pointer;" style-hover="background-color: #fefefe;">Verzenden</button>
+      <button type="submit" style="margin-top: 22px; border: none; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-family: inherit; font-weight: 700; font-size: 14px; line-height: 1; cursor: pointer;" style-hover="background-color: #fefefe;">Verzenden</button>
     </form>
 
     <sc-if value="{{ showNewsletter }}" hint-placeholder-val="{{ true }}">
-      <form onSubmit="{{ submitNewsletter }}" novalidate="novalidate" style="border: 8px solid rgba(161,86,91,0.58); border-radius: 10px; padding: 10px 20px 25px 20px; box-sizing: border-box; display: flex; flex-direction: column; height: 100%;">
+      <form onSubmit="{{ submitNewsletter }}" novalidate="novalidate" style="background: rgba(255,255,255,0.82); border-radius: 14px; padding: 32px clamp(22px, 4vw, 34px); box-shadow: 0 10px 30px rgba(31,56,100,0.08); box-sizing: border-box; display: flex; flex-direction: column; height: 100%;">
+        <p style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.06em; font-size: 20px; line-height: 1.3; color: #A1565B;">Inschrijven</p>
         <div>
-          <label style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Naam <span style="color: #cc0000;">*</span></label>
+          <label style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">Naam <span style="color: #cc0000;">*</span></label>
           <div style="display: flex; gap: 10px;">
             <div style="flex: 1;">
-              <input type="text" id="nb-voornaam" name="voornaam" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+              <input type="text" id="nb-voornaam" name="voornaam" required="required" style="width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
               <label for="nb-voornaam" style="display: block; font-size: 12px; color: #666666; margin-top: 2px;">Voornaam</label>
             </div>
             <div style="flex: 1;">
-              <input type="text" id="nb-achternaam" name="achternaam" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+              <input type="text" id="nb-achternaam" name="achternaam" required="required" style="width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
               <label for="nb-achternaam" style="display: block; font-size: 12px; color: #666666; margin-top: 2px;">Achternaam</label>
             </div>
           </div>
         </div>
         <div>
-          <label for="nb-email" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">E-mail <span style="color: #cc0000;">*</span></label>
-          <input type="email" id="nb-email" name="nb-email" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+          <label for="nb-email" style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">E-mail <span style="color: #cc0000;">*</span></label>
+          <input type="email" id="nb-email" name="nb-email" required="required" style="width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
         </div>
         <div>
-          <label for="nb-telefoon" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Telefoonnummer <span style="color: #cc0000;">*</span></label>
-          <input type="text" id="nb-telefoon" name="nb-telefoon" required="required" style="width: 100%; box-sizing: border-box; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
+          <label for="nb-telefoon" style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">Telefoonnummer <span style="color: #cc0000;">*</span></label>
+          <input type="text" id="nb-telefoon" name="nb-telefoon" required="required" style="width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333;">
         </div>
         <div>
-          <label style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Ik wil mij inschrijven voor <span style="color: #cc0000;">*</span></label>
+          <label style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">Ik wil mij inschrijven voor <span style="color: #cc0000;">*</span></label>
           <div style="display: flex; flex-direction: column; gap: 6px;">
             <label for="nb-optie-1" style="display: flex; align-items: flex-start; gap: 8px; font-size: 15px; cursor: pointer;"><input type="checkbox" id="nb-optie-1" name="inschrijving" value="nieuwsbrief" style="margin-top: 5px;">de Nieuwsbrief</label>
             <label for="nb-optie-2" style="display: flex; align-items: flex-start; gap: 8px; font-size: 15px; cursor: pointer;"><input type="checkbox" id="nb-optie-2" name="inschrijving" value="nature-qigong" style="margin-top: 5px;">Wekelijks Nature Qigong (Geldermalsen)</label>
@@ -203,13 +206,13 @@
           </div>
         </div>
         <div>
-          <label for="nb-opmerkingen" style="display: block; font-weight: 700; font-size: 15px; margin: 12px 0 4px 0;">Opmerkingen</label>
-          <textarea id="nb-opmerkingen" name="opmerkingen" style="width: 100%; box-sizing: border-box; height: 90px; padding: 8px 10px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333; resize: vertical;"></textarea>
+          <label for="nb-opmerkingen" style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">Opmerkingen</label>
+          <textarea id="nb-opmerkingen" name="opmerkingen" style="width: 100%; box-sizing: border-box; height: 90px; padding: 10px 12px; border: 1px solid #cccccc; border-radius: 2px; background: #ffffff; font-family: inherit; font-size: 15px; color: #333333; resize: vertical;"></textarea>
         </div>
         <sc-if value="{{ newsletterSent }}" hint-placeholder-val="{{ false }}">
           <p style="margin: 15px 0 0 0; font-weight: 600; color: #1F3864;">Bedankt! Let op: in deze offline kopie wordt het formulier niet echt verzonden.</p>
         </sc-if>
-        <button type="submit" style="margin-top: 20px; border: none; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-family: inherit; font-weight: 700; font-size: 14px; line-height: 1; cursor: pointer;" style-hover="background-color: #fefefe;">Verzenden</button>
+        <button type="submit" style="margin-top: 22px; border: none; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-family: inherit; font-weight: 700; font-size: 14px; line-height: 1; cursor: pointer;" style-hover="background-color: #fefefe;">Verzenden</button>
       </form>
     </sc-if>
   </section>
