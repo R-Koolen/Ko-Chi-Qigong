@@ -3,16 +3,18 @@
 // To add a piece: add one line at the top of ITEMS (newest first):
 //   ['id', 'series', 'Label', year, 'image-name', 'pdf-name']
 //   - series:     'energie', 'geluk' or 'nb' (see SERIES)
-//   - image-name: file in assets/insp/ without .png
+//   - image-name: file in assets/insp/ without .webp. A .png/.jpg also works if you write the
+//                 extension ('nb-nieuw.png'), but WebP is ~45% smaller: convert at squoosh.app
+//                 (WebP, lossless) or with:  python tools/optimize-images.py
 //   - pdf-name:   file in assets/pdf/ without .pdf (leave out if there is no PDF yet → "PDF volgt")
 // Then run:  node tools/sync-inspiratie.js
 //   → updates the static copy in inspiratie.html / inspiratie-stuk.html (what Google and no-JS
 //     visitors see) and the piece list in sitemap.xml, and warns about missing images/PDFs.
 
 var SERIES = {
-  energie: { key: 'energie', name: 'Bewust-zijn met energie', unit: 'edities', color: '#A1565B', photo: 'assets/meditatie-clouds.jpg', ctaTitle: 'Doe mee met de volgende editie', cta: 'Schrijf je in', ctaHref: 'voor-particulieren.html#Agenda' },
-  geluk: { key: 'geluk', name: 'Ontdek de sleutels tot geluk', unit: 'edities', color: '#5b739e', photo: 'assets/strandpalen-beach.jpg', ctaTitle: 'Doe mee met de volgende cursus', cta: 'Schrijf je in', ctaHref: 'voor-particulieren.html#Agenda' },
-  nb: { key: 'nb', name: 'Nieuwsbrief', unit: 'nummers', color: '#1F3864', photo: 'assets/hero-china.jpg', ctaTitle: 'Ontvang de nieuwsbrief', cta: 'Aanmelden', ctaHref: 'contact.html' }
+  energie: { key: 'energie', name: 'Bewust-zijn met energie', unit: 'edities', color: '#A1565B', photo: 'assets/meditatie-clouds.webp', ctaTitle: 'Doe mee met de volgende editie', cta: 'Schrijf je in', ctaHref: 'voor-particulieren.html#Agenda' },
+  geluk: { key: 'geluk', name: 'Ontdek de sleutels tot geluk', unit: 'edities', color: '#5b739e', photo: 'assets/strandpalen-beach.webp', ctaTitle: 'Doe mee met de volgende cursus', cta: 'Schrijf je in', ctaHref: 'voor-particulieren.html#Agenda' },
+  nb: { key: 'nb', name: 'Nieuwsbrief', unit: 'nummers', color: '#1F3864', photo: 'assets/hero-china.webp', ctaTitle: 'Ontvang de nieuwsbrief', cta: 'Aanmelden', ctaHref: 'contact.html' }
 };
 var ITEMS = [
   ['e7','energie','28 juni 2026',2026,'energie-28juni-2026','energie-28-juni-2026'],
@@ -38,4 +40,4 @@ var ITEMS = [
   ['n5','nb','Oktober 2022',2022,'nb-oktober','nieuwsbrief-oktober-2022'],
   ['n4','nb','Augustus 2022',2022,'nb-augustus','nieuwsbrief-augustus-2022'],
   ['n3','nb','April 2022',2022,'nb-april','nieuwsbrief-april-2022']
-].map(([id, s, label, year, img, pdf]) => ({ id, s, label, year, img: 'assets/insp/' + img + '.png', pdf: pdf ? 'assets/pdf/' + pdf + '.pdf' : null, href: 'inspiratie-stuk.html?id=' + id }));
+].map(([id, s, label, year, img, pdf]) => ({ id, s, label, year, img: 'assets/insp/' + img + (/\.\w+$/.test(img) ? '' : '.webp'), pdf: pdf ? 'assets/pdf/' + pdf + '.pdf' : null, href: 'inspiratie-stuk.html?id=' + id }));

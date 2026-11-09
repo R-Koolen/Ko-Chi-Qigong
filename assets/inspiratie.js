@@ -95,6 +95,12 @@
     }
     var s = SERIES[item.s];
     document.title = s.name + ': ' + item.label + ' - Ko-Chi qigong';
+    // Canonical per piece (Google runs this script): drops ?utm_… etc. but keeps ?id=, so the
+    // pieces are not merged into one page. Link previews (WhatsApp) don't run JS and show the generic card.
+    var canon = document.createElement('link');
+    canon.rel = 'canonical';
+    canon.href = location.origin + location.pathname + '?id=' + encodeURIComponent(item.id);
+    document.head.appendChild(canon);
     // Umami's page list groups by path (all pieces are inspiratie-stuk.html), so count each piece too.
     track('inspiratie-bekeken', { stuk: item.id, serie: s.name, titel: item.label });
     var state = { pdfLoading: true, pdfError: false };
