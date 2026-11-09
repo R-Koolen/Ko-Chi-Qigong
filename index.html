@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Coaching, Qigong en workshops voor particulieren en organisaties, in Geldermalsen, op locatie of online. Petra Koolen werkt met lichaam, gevoel en hoofd.">
 <title>Home - Ko-Chi qigong</title>
+<script>
+  // Old WordPress home-page anchors (www.kochi-qigong.nl/#Agenda etc.) → their new pages.
+  (function () {
+    var old = { '#Over_mij': 'over-mij.html', '#Agenda': 'voor-particulieren.html#Agenda', '#Contact': 'contact.html' };
+    if (old[location.hash]) location.replace(old[location.hash]);
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;family=Cinzel+Decorative:wght@400;700;900&amp;display=swap">
