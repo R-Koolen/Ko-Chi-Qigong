@@ -81,7 +81,9 @@
     var id = new URLSearchParams(window.location.search).get('id');
     // no ?id → newest piece (matches the static HTML); unknown ?id → "niet gevonden"
     var item = id ? ITEMS.filter(function (i) { return i.id === id; })[0] : ITEMS[0];
+    var track = window.kochiTrack || function () {}; // visitor statistics, from assets/site.js
     if (!item) {
+      track('404', { adres: location.pathname + location.search, vanaf: document.referrer || '(direct)' });
       document.title = 'Stuk niet gevonden - Ko-Chi qigong';
       main.innerHTML =
         '<section style="max-width: 640px; margin: 60px auto; text-align: center; color: #1F3864;">' +
@@ -93,6 +95,8 @@
     }
     var s = SERIES[item.s];
     document.title = s.name + ': ' + item.label + ' - Ko-Chi qigong';
+    // Umami's page list groups by path (all pieces are inspiratie-stuk.html), so count each piece too.
+    track('inspiratie-bekeken', { stuk: item.id, serie: s.name, titel: item.label });
     var state = { pdfLoading: true, pdfError: false };
     var render = function () {
       bind(main, {
@@ -128,6 +132,17 @@
           el.appendChild(c);
           await pg.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
           if (p === 1) { state.pdfLoading = false; render(); }
+        }
+        // "Read to the end": once the bottom of the last PDF page scrolls into view, count it (once).
+        var end = document.createElement('div');
+        el.appendChild(end);
+        if ('IntersectionObserver' in window) {
+          var seen = new IntersectionObserver(function (entries) {
+            if (!entries[0].isIntersecting) return;
+            seen.disconnect();
+            track('inspiratie-gelezen', { stuk: item.id, serie: s.name, titel: item.label });
+          });
+          seen.observe(end);
         }
       } catch (e) {
         console.warn('PDF render failed', e);
