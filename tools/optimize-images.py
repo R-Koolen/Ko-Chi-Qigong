@@ -1,4 +1,4 @@
-"""Ko-Chi qigong: convert new images to WebP before using them on the site.
+"""Ko-Chi Qigong: convert new images to WebP before using them on the site.
 
     python tools/optimize-images.py assets/nieuwe-foto.jpg            photo  -> WebP quality 80, max 1600 px wide
     python tools/optimize-images.py assets/nieuwe-foto.jpg --max 1000  photo shown small -> smaller file

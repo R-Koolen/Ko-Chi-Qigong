@@ -3,18 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TEMPLATE for the piece pages: node tools/sync-inspiratie.js copies this file to one page per piece
+     (inspiratie-….html), filled in with that piece. Edit the layout here, then run the script.
+     This file itself only forwards old links (inspiratie-stuk.html?id=e7) to the piece's own page. -->
+<!-- template-only: -->
+<meta name="robots" content="noindex">
+<script src="assets/inspiratie-data.js"></script>
+<script>
+  // Old link inspiratie-stuk.html?id=… (newsletters, WordPress redirects) → the piece's own page,
+  // before anything is drawn. Keeps ?utm_… and #anchor. No ?id → newest piece. Unknown ?id → stays
+  // here and assets/inspiratie.js shows "Stuk niet gevonden".
+  (function () {
+    var q = new URLSearchParams(location.search), id = q.get('id');
+    var item = id ? ITEMS.filter(function (i) { return i.id === id; })[0] : ITEMS[0];
+    if (!item) return;
+    q.delete('id');
+    location.replace(item.href + (q.toString() ? '?' + q.toString() : '') + location.hash);
+  })();
+</script>
+<!-- /template-only -->
 <meta name="description" content="Een nieuwsbrief of een editie van 'Bewust-zijn met energie' of 'Ontdek de sleutels tot geluk', geschreven door Petra Koolen van Ko-Chi Qigong.">
-<!-- one file serves every piece (?id=…): canonical + og:url are set per piece by assets/inspiratie.js -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Ko-Chi qigong">
+<meta property="og:site_name" content="Ko-Chi Qigong">
 <meta property="og:locale" content="nl_NL">
-<meta property="og:title" content="Inspiratie - Ko-Chi qigong">
+<meta property="og:title" content="Inspiratie - Ko-Chi Qigong">
 <meta property="og:description" content="Een nieuwsbrief of een editie van 'Bewust-zijn met energie' of 'Ontdek de sleutels tot geluk', geschreven door Petra Koolen van Ko-Chi Qigong.">
 <meta property="og:image" content="https://www.kochi-qigong.nl/assets/og/strand.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<title>Inspiratie - Ko-Chi qigong</title>
+<title>Inspiratie - Ko-Chi Qigong</title>
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
@@ -42,7 +60,7 @@
 
 <header class="site-header">
   <div class="site-logo-wrap">
-    <a href="index.html" class="site-logo"><img src="assets/logo.png" alt="Ko-Chi qigong" width="237" height="58"></a>
+    <a href="index.html" class="site-logo"><img src="assets/logo.png" alt="Ko-Chi Qigong" width="237" height="58"></a>
   </div>
   <nav class="site-nav" aria-label="Site navigatie">
     <a href="index.html" class="nav-link">Home</a>
@@ -121,6 +139,7 @@
           <span style="font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: #1F3864; background: rgba(255,255,255,0.85); padding: 6px 10px; border-radius: 4px;">PDF volgt</span>
         </div>
       </x-if>
+      <div class="visually-hidden" data-pdf-tekst></div>
     </article>
     <aside class="d-asideStyle">
       <div style="background: #1F3864; color: #ffffff; border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 18px;">
@@ -146,32 +165,32 @@
           <span style="font-size: 13px; font-weight: 600; line-height: 1.3;"><span data-bind="it.label"></span></span>
         </a>
       </template>
-        <a class="hv2" href="inspiratie-stuk.html?id=e6" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
+        <a class="hv2" href="inspiratie-bewust-zijn-met-energie-26-april-2026.html" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
           <img loading="lazy" src="assets/insp/energie-26april-2026.webp" data-bind-src="it.img" alt="26 april 2026" data-bind-alt="it.label" style="display: block; width: 100%; aspect-ratio: 8 / 3; object-fit: contain; background: #ffffff; padding: 8px; box-sizing: border-box;">
           <span style="font-size: 13px; font-weight: 600; line-height: 1.3;"><span data-bind="it.label">26 april 2026</span></span>
         </a>
       
-        <a class="hv2" href="inspiratie-stuk.html?id=e5" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
+        <a class="hv2" href="inspiratie-bewust-zijn-met-energie-november-2024.html" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
           <img loading="lazy" src="assets/insp/energie-november-2024.webp" data-bind-src="it.img" alt="November 2024" data-bind-alt="it.label" style="display: block; width: 100%; aspect-ratio: 8 / 3; object-fit: contain; background: #ffffff; padding: 8px; box-sizing: border-box;">
           <span style="font-size: 13px; font-weight: 600; line-height: 1.3;"><span data-bind="it.label">November 2024</span></span>
         </a>
       
-        <a class="hv2" href="inspiratie-stuk.html?id=e4" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
+        <a class="hv2" href="inspiratie-bewust-zijn-met-energie-1-juni-2024.html" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
           <img loading="lazy" src="assets/insp/energie-juni2024-hq.webp" data-bind-src="it.img" alt="1 juni 2024" data-bind-alt="it.label" style="display: block; width: 100%; aspect-ratio: 8 / 3; object-fit: contain; background: #ffffff; padding: 8px; box-sizing: border-box;">
           <span style="font-size: 13px; font-weight: 600; line-height: 1.3;"><span data-bind="it.label">1 juni 2024</span></span>
         </a>
       
-        <a class="hv2" href="inspiratie-stuk.html?id=e3" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
+        <a class="hv2" href="inspiratie-bewust-zijn-met-energie-februari-2024.html" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
           <img loading="lazy" src="assets/insp/energie-2024.webp" data-bind-src="it.img" alt="Februari 2024" data-bind-alt="it.label" style="display: block; width: 100%; aspect-ratio: 8 / 3; object-fit: contain; background: #ffffff; padding: 8px; box-sizing: border-box;">
           <span style="font-size: 13px; font-weight: 600; line-height: 1.3;"><span data-bind="it.label">Februari 2024</span></span>
         </a>
       
-        <a class="hv2" href="inspiratie-stuk.html?id=e2" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
+        <a class="hv2" href="inspiratie-bewust-zijn-met-energie-oktober-2023.html" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
           <img loading="lazy" src="assets/insp/energie-2023.webp" data-bind-src="it.img" alt="Oktober 2023" data-bind-alt="it.label" style="display: block; width: 100%; aspect-ratio: 8 / 3; object-fit: contain; background: #ffffff; padding: 8px; box-sizing: border-box;">
           <span style="font-size: 13px; font-weight: 600; line-height: 1.3;"><span data-bind="it.label">Oktober 2023</span></span>
         </a>
       
-        <a class="hv2" href="inspiratie-stuk.html?id=e1" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
+        <a class="hv2" href="inspiratie-bewust-zijn-met-energie-mei-en-juni-2023.html" data-bind-href="it.href" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1F3864;">
           <img loading="lazy" src="assets/insp/energie-meijuni2023.webp" data-bind-src="it.img" alt="Mei en juni 2023" data-bind-alt="it.label" style="display: block; width: 100%; aspect-ratio: 8 / 3; object-fit: contain; background: #ffffff; padding: 8px; box-sizing: border-box;">
           <span style="font-size: 13px; font-weight: 600; line-height: 1.3;"><span data-bind="it.label">Mei en juni 2023</span></span>
         </a>
@@ -180,7 +199,7 @@
   </section></main>
 
 <footer style="padding: 40px 35px 15px 35px;">
-  <p style="margin: 0 0 15px 0; text-align: center;">Copyright © 2026 Ko-Chi qigong</p>
+  <p style="margin: 0 0 15px 0; text-align: center;">Copyright © 2026 Ko-Chi Qigong</p>
   <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
     <span style="font-size: 13px;">Made by Robin&nbsp;&nbsp;</span>
     <a class="hv3" href="https://www.linkedin.com/in/robin-koolen/" target="_blank" rel="noopener noreferrer" aria-label="Linkedin" style="display: inline-flex; align-items: center; gap: 6px; color: #1c86c6; text-decoration: none; font-size: 13px;">

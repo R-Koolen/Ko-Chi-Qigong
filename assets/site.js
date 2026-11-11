@@ -1,4 +1,4 @@
-// Ko-Chi qigong — shared behaviour for every page. Plain JavaScript, no libraries.
+// Ko-Chi Qigong — shared behaviour for every page. Plain JavaScript, no libraries.
 (function () {
   var root = document.documentElement;
   var isMobile = function () { return window.matchMedia('(max-width: 900px)').matches; };

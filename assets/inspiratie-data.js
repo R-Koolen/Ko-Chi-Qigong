@@ -1,4 +1,4 @@
-// Ko-Chi qigong — Inspiratie data, used by inspiratie.html and inspiratie-stuk.html.
+// Ko-Chi Qigong — Inspiratie data, used by inspiratie.html and the piece pages (inspiratie-….html).
 //
 // To add a piece: add one line at the top of ITEMS (newest first):
 //   ['id', 'series', 'Label', year, 'image-name', 'pdf-name']
@@ -8,8 +8,11 @@
 //                 (WebP, lossless) or with:  python tools/optimize-images.py
 //   - pdf-name:   file in assets/pdf/ without .pdf (leave out if there is no PDF yet → "PDF volgt")
 // Then run:  node tools/sync-inspiratie.js
-//   → updates the static copy in inspiratie.html / inspiratie-stuk.html (what Google and no-JS
-//     visitors see) and the piece list in sitemap.xml, and warns about missing images/PDFs.
+//   → writes one page per piece (inspiratie-<series>-<label>.html, e.g. inspiratie-nieuwsbrief-het-zaadje.html)
+//     with the text of its PDF in it (for Google, AI assistants and screen readers), updates the
+//     static copy in inspiratie.html and the piece list in sitemap.xml, and warns about missing images/PDFs.
+//   The page address comes from the series name + label. Changing a label later changes the
+//   address; the script then turns the old page into a redirect, so old links keep working.
 
 var SERIES = {
   energie: { key: 'energie', name: 'Bewust-zijn met energie', unit: 'edities', color: '#A1565B', photo: 'assets/meditatie-clouds.webp', ctaTitle: 'Doe mee met de volgende editie', cta: 'Schrijf je in', ctaHref: 'voor-particulieren.html#Agenda' },
@@ -40,4 +43,9 @@ var ITEMS = [
   ['n5','nb','Oktober 2022',2022,'nb-oktober','nieuwsbrief-oktober-2022'],
   ['n4','nb','Augustus 2022',2022,'nb-augustus','nieuwsbrief-augustus-2022'],
   ['n3','nb','April 2022',2022,'nb-april','nieuwsbrief-april-2022']
-].map(([id, s, label, year, img, pdf]) => ({ id, s, label, year, img: 'assets/insp/' + img + (/\.\w+$/.test(img) ? '' : '.webp'), pdf: pdf ? 'assets/pdf/' + pdf + '.pdf' : null, href: 'inspiratie-stuk.html?id=' + id }));
+].map(([id, s, label, year, img, pdf]) => ({ id, s, label, year, img: 'assets/insp/' + img + (/\.\w+$/.test(img) ? '' : '.webp'), pdf: pdf ? 'assets/pdf/' + pdf + '.pdf' : null, href: 'inspiratie-' + slug(SERIES[s].name + ' ' + label) + '.html' }));
+
+// 'Ontdek de sleutels tot geluk Editie 2025' → 'ontdek-de-sleutels-tot-geluk-editie-2025'
+function slug(text) {
+  return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}

@@ -1,6 +1,8 @@
-// Ko-Chi qigong — fills the Inspiratie pages from assets/inspiratie-data.js (SERIES, ITEMS).
-// The HTML already contains a complete static version; this script refreshes it from the data,
-// picks the piece for inspiratie-stuk.html?id=..., and draws its PDF.
+// Ko-Chi Qigong — fills the Inspiratie pages from assets/inspiratie-data.js (SERIES, ITEMS).
+// The HTML already contains a complete static version (written by tools/sync-inspiratie.js); this
+// script refreshes it from the data and draws the piece's PDF. A piece page names its piece in
+// <body data-id="…">; inspiratie-stuk.html?id=… (old links) is forwarded in its <head>, so here it
+// only remains for an unknown id ("Stuk niet gevonden").
 //
 // Markup hooks (written by the converter):
 //   data-bind="expr"          → element text
@@ -76,15 +78,15 @@
     bind(main, { total: ITEMS.length, series: series });
   }
 
-  // ---- inspiratie-stuk.html?id=…: one piece, its PDF and related pieces ----
+  // ---- piece page (inspiratie-….html): one piece, its PDF and related pieces ----
   if (page === 'inspiratie-stuk') {
-    var id = new URLSearchParams(window.location.search).get('id');
+    var id = document.body.getAttribute('data-id') || new URLSearchParams(window.location.search).get('id');
     // no ?id → newest piece (matches the static HTML); unknown ?id → "niet gevonden"
     var item = id ? ITEMS.filter(function (i) { return i.id === id; })[0] : ITEMS[0];
     var track = window.kochiTrack || function () {}; // visitor statistics, from assets/site.js
     if (!item) {
       track('404', { adres: location.pathname + location.search, vanaf: document.referrer || '(direct)' });
-      document.title = 'Stuk niet gevonden - Ko-Chi qigong';
+      document.title = 'Stuk niet gevonden - Ko-Chi Qigong';
       main.innerHTML =
         '<section style="max-width: 640px; margin: 60px auto; text-align: center; color: #1F3864;">' +
           '<h1 style="margin: 0; font-family: \'Cinzel Decorative\', serif; font-weight: 700; letter-spacing: 0.05em; font-size: 30px; line-height: 1.2;">Stuk niet gevonden</h1>' +
@@ -94,14 +96,9 @@
       return;
     }
     var s = SERIES[item.s];
-    document.title = s.name + ': ' + item.label + ' - Ko-Chi qigong';
-    // Canonical per piece (Google runs this script): drops ?utm_… etc. but keeps ?id=, so the
-    // pieces are not merged into one page. Link previews (WhatsApp) don't run JS and show the generic card.
-    var canon = document.createElement('link');
-    canon.rel = 'canonical';
-    canon.href = location.origin + location.pathname + '?id=' + encodeURIComponent(item.id);
-    document.head.appendChild(canon);
-    // Umami's page list groups by path (all pieces are inspiratie-stuk.html), so count each piece too.
+    document.title = s.name + ': ' + item.label + ' - Ko-Chi Qigong';
+    // Each piece has its own page (and canonical) now, but keep this event so the counts continue
+    // the ones from before, when all pieces shared one address.
     track('inspiratie-bekeken', { stuk: item.id, serie: s.name, titel: item.label });
     var state = { pdfLoading: true, pdfError: false };
     var render = function () {
