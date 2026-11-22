@@ -40,12 +40,95 @@
     });
   });
 
-  // Forms: data-submit="contactsent:true" shows the thank-you message. Nothing is sent yet.
-  document.querySelectorAll('form[data-submit]').forEach(function (form) {
+  // ---- Forms ----
+  // <form data-form="contact" data-submit="contactsent:true">: the fields are checked here, then
+  // sent to a Google Apps Script that saves them in Petra's Google Sheet and emails her
+  // (guide: tools/forms/README.md, local only, not in git). data-submit is the page state that shows the thank-you message.
+  // A checkbox group that needs at least one tick: put data-required-group on its container.
+  // The address below does not depend on the site's domain: nothing changes at the domain switch.
+  var FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw4omw1UxtKWV-tEaQqdfZaA0gudes_vtdgDvyKKjhpwXzqXZgkkvxTE03fcctEvhk/exec'; // web app URL (Apps Script: Deploy → Manage deployments)
+  var FORM_EMAIL = 'Kochi.qigong@gmail.com'; // shown when sending fails
+  var pageOpenedAt = Date.now();
+
+  function checkForm(form) {
+    form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea').forEach(function (el) {
+      el.value = el.value.trim(); // only spaces counts as empty
+      var bad = el.type === 'email' && el.value !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$/.test(el.value);
+      el.setCustomValidity(bad ? 'Vul een geldig e-mailadres in, bijvoorbeeld naam@voorbeeld.nl.' : '');
+    });
+    form.querySelectorAll('[data-required-group]').forEach(function (group) {
+      var boxes = group.querySelectorAll('input[type="checkbox"]');
+      var ticked = Array.prototype.some.call(boxes, function (b) { return b.checked; });
+      boxes[0].setCustomValidity(ticked ? '' : 'Kies minstens één optie.');
+    });
+    return form.reportValidity(); // shows the browser's message at the first problem
+  }
+
+  function formStatus(form, text, withEmail) {
+    var el = form.querySelector('.form-status');
+    if (!el) {
+      el = document.createElement('p');
+      el.className = 'form-status';
+      el.setAttribute('role', 'status');
+      var button = form.querySelector('[type="submit"]');
+      button.parentNode.insertBefore(el, button);
+    }
+    el.textContent = text;
+    if (withEmail) {
+      var a = document.createElement('a');
+      a.href = 'mailto:' + FORM_EMAIL;
+      a.textContent = FORM_EMAIL;
+      el.appendChild(a);
+      el.appendChild(document.createTextNode('.'));
+    }
+  }
+
+  function sendForm(form) {
+    var data = new URLSearchParams(new FormData(form));
+    data.set('formulier', form.getAttribute('data-form'));
+    data.set('t', String(Date.now() - pageOpenedAt));
+    var abort = window.AbortController ? new AbortController() : null;
+    if (abort) setTimeout(function () { abort.abort(); }, 20000);
+    return fetch(FORM_ENDPOINT, { method: 'POST', body: data, signal: abort ? abort.signal : undefined })
+      .then(function (r) { return r.json(); })
+      .then(function (r) { if (!r || r.ok !== true) throw new Error((r && r.error) || 'failed'); });
+  }
+
+  document.querySelectorAll('form[data-form]').forEach(function (form) {
+    // Spam trap: a field people never see (off-screen, skipped by Tab and screen readers).
+    // Bots that fill in every field give themselves away.
+    var trap = document.createElement('div');
+    trap.className = 'form-hp';
+    trap.setAttribute('aria-hidden', 'true');
+    trap.innerHTML = '<label>Laat dit veld leeg <input type="text" name="hp" tabindex="-1" autocomplete="off"></label>';
+    form.insertBefore(trap, form.firstChild);
+
+    var spec = (form.getAttribute('data-submit') || '').split(':');
+    var button = form.querySelector('[type="submit"]');
+    var buttonText = button.textContent;
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var spec = form.getAttribute('data-submit');
-      if (spec) { var p = spec.split(':'); setState(p[0], p[1]); }
+      if (form.hasAttribute('data-busy') || !checkForm(form)) return;
+      if (spec[0]) setState(spec[0], 'false');
+      form.setAttribute('data-busy', '');
+      button.disabled = true;
+      button.textContent = 'Bezig met verzenden…';
+      formStatus(form, '');
+      var finish = function (ok) {
+        form.removeAttribute('data-busy');
+        button.disabled = false;
+        button.textContent = buttonText;
+        track('formulier', { formulier: form.getAttribute('data-form'), resultaat: ok ? 'verzonden' : 'mislukt', page: page() });
+      };
+      (FORM_ENDPOINT ? sendForm(form) : Promise.reject(new Error('no endpoint'))).then(function () {
+        finish(true);
+        form.reset();
+        if (spec[0]) setState(spec[0], spec[1]);
+      }, function () {
+        finish(false);
+        formStatus(form, 'Het versturen is helaas niet gelukt. Probeer het later nog eens, of mail je bericht naar ', true);
+      });
     });
   });
 
@@ -103,12 +186,6 @@
     if (!el) return;
     var p = el.getAttribute('data-set').split(':');
     if (root.getAttribute('data-' + p[0]) === p[1]) track('tab', { tab: label(el), page: page() });
-  });
-
-  // Form submits. Note: the forms do not send anything yet (see TODO.md), so this shows how many
-  // messages are currently lost.
-  document.addEventListener('submit', function () {
-    track('formulier', { page: page() });
   });
 
   // ---- Scroll to #anchor with a little space above (pages with <body data-hash-scroll>) ----

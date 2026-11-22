@@ -175,6 +175,13 @@ p { margin: 0 0 20px 0; }
    They never create a box of their own, so layout is the same as without the wrapper. */
 x-if, x-for { display: contents; }
 
+/* Forms (behaviour in site.js). .form-hp is the spam trap: off-screen, never seen by people.
+   .form-status is the "could not send" message, added by site.js above the button. */
+.form-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-status { margin: 15px 0 0 0; font-weight: 600; color: #A1565B; }
+.form-status:empty { display: none; }
+form button[type="submit"]:disabled { opacity: 0.6; cursor: wait; }
+
 /* Decorative heading font (Cinzel Decorative), used for page titles and card titles */
 .font-display {
   font-family: 'Cinzel Decorative', serif;

@@ -385,34 +385,34 @@
       </div>
 
       <div class="d-kennisCardStyle">
-        <form data-submit="kennissent:true" novalidate="novalidate" style="display: flex; flex-direction: column;">
+        <form method="post" data-form="organisaties" data-submit="kennissent:true" novalidate="novalidate" style="display: flex; flex-direction: column;">
           <p style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.06em; font-size: 20px; line-height: 1.3; color: #A1565B;">Contactgegevens</p>
           
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0 14px;">
             <div>
               <label for="kv-voornaam" style="display: block; font-weight: 700; font-size: 14px; margin: 20px 0 4px 0;">Voornaam <span style="color: #cc0000;">*</span></label>
-              <input class="d-kennisInputStyle" type="text" id="kv-voornaam" name="voornaam" required="required">
+              <input maxlength="200" class="d-kennisInputStyle" type="text" id="kv-voornaam" name="voornaam" required="required">
             </div>
             <div>
               <label for="kv-achternaam" style="display: block; font-weight: 700; font-size: 14px; margin: 20px 0 4px 0;">Achternaam</label>
-              <input class="d-kennisInputStyle" type="text" id="kv-achternaam" name="achternaam">
+              <input maxlength="200" class="d-kennisInputStyle" type="text" id="kv-achternaam" name="achternaam">
             </div>
           </div>
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0 14px;">
             <div>
               <label for="kv-email" style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">E-mail <span style="color: #cc0000;">*</span></label>
-              <input class="d-kennisInputStyle" type="email" id="kv-email" name="email" required="required">
+              <input maxlength="200" class="d-kennisInputStyle" type="email" id="kv-email" name="email" required="required">
             </div>
             <div>
               <label for="kv-telefoon" style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">Telefoon</label>
-              <input class="d-kennisInputStyle" type="tel" id="kv-telefoon" name="telefoon">
+              <input maxlength="200" class="d-kennisInputStyle" type="tel" id="kv-telefoon" name="telefoon">
             </div>
           </div>
 
           <label for="kv-vraag" style="display: block; font-weight: 700; font-size: 14px; margin: 14px 0 4px 0;">Waar gaat het over? <span style="color: #cc0000;">*</span></label>
-          <textarea class="d-kennisTextareaStyle" id="kv-vraag" name="vraag" required="required"></textarea>
+          <textarea maxlength="5000" class="d-kennisTextareaStyle" id="kv-vraag" name="vraag" required="required"></textarea>
 
           <x-if class="if-kennisSent">
             <p style="margin: 16px 0 0 0; font-weight: 600; color: #1F3864;">Dank je wel, ik neem binnen één werkdag contact op.</p>
