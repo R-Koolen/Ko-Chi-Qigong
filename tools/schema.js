@@ -103,6 +103,38 @@ const sleutelsTotGeluk = {
   }
 };
 
+// Agenda items with a fixed date (voor-particulieren.html#Agenda) as schema.org Events, so Google
+// can show them as events. Kept up to date by the add-agenda skill (.claude/skills/add-agenda).
+// Only real dates ("2027 n.t.b." gets no event), and remove an event once its date has passed.
+//   id:    the agenda item's id (= its panel id; the link voor-particulieren.html#<id> opens it)
+//   start: '2027-03-14T10:00:00+01:00' (Dutch time: +01:00 in winter, +02:00 in summer time),
+//          or just '2027-03-14' while the time is not known
+//   end:   same format, optional
+//   place: town, default Geldermalsen;  online: true for an online event (no place)
+//   price: euros, optional;  description: one or two sentences in Dutch
+const agendaEvent = (e) => ({
+  '@type': 'Event',
+  '@id': BASE + 'voor-particulieren.html#' + e.id + '-' + e.start.slice(0, 10),
+  name: e.name,
+  description: e.description,
+  url: BASE + 'voor-particulieren.html#' + e.id,
+  startDate: e.start,
+  endDate: e.end,
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/' + (e.online ? 'Online' : 'Offline') + 'EventAttendanceMode',
+  location: e.online
+    ? { '@type': 'VirtualLocation', url: BASE + 'contact.html' }
+    : { '@type': 'Place', name: e.place || 'Geldermalsen', address: { '@type': 'PostalAddress', addressLocality: e.place || 'Geldermalsen', addressCountry: 'NL' } },
+  image: BASE + 'assets/og/china.jpg',
+  organizer: ref(ORG),
+  performer: ref(PETRA),
+  inLanguage: 'nl',
+  offers: e.price == null ? undefined : { '@type': 'Offer', price: String(e.price), priceCurrency: 'EUR', url: BASE + 'contact.html#inschrijven', availability: 'https://schema.org/InStock' }
+});
+const AGENDA_EVENTS = [
+  // agendaEvent({ id: 'bewust-zijn-met-energie', name: 'Bewust zijn met Energie', start: '2027-03-14T10:00:00+01:00', end: '2027-03-14T16:00:00+01:00', price: 95, description: '…' }),
+];
+
 // ---- the pages ----
 // label:    short name, as in the menu (breadcrumb, llms.txt); the full name is the page's <title>
 // type:     schema.org page type (default WebPage)
@@ -110,7 +142,7 @@ const sleutelsTotGeluk = {
 // services: SERVICES keys described on that page
 const PAGES = {
   'index.html': { label: 'Home' },
-  'voor-particulieren.html': { label: 'Voor Particulieren', services: ['qigong', 'coaching', 'meditatie'], extra: [sleutelsTotGeluk] },
+  'voor-particulieren.html': { label: 'Voor Particulieren', services: ['qigong', 'coaching', 'meditatie'], extra: [sleutelsTotGeluk, ...AGENDA_EVENTS] },
   'qigong.html': { label: 'Qigong', parent: 'voor-particulieren.html', services: ['qigong'] },
   'coaching.html': { label: 'Coaching', parent: 'voor-particulieren.html', services: ['coaching'] },
   'meditatie.html': { label: 'Meditatie', parent: 'voor-particulieren.html', services: ['meditatie'] },

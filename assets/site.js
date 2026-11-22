@@ -27,6 +27,11 @@
       var p = el.getAttribute('data-set').split(':');
       el.setAttribute('aria-expanded', root.getAttribute('data-' + p[0]) === p[1] ? 'true' : 'false');
     });
+    // Blocks with data-show="activetab:energie" are only shown in that state (e.g. the Agenda panels).
+    document.querySelectorAll('[data-show]').forEach(function (el) {
+      var p = el.getAttribute('data-show').split(':');
+      el.hidden = root.getAttribute('data-' + p[0]) !== p[1];
+    });
   }
 
   // Buttons: data-set="activetab:2" sets that state. With data-set-toggle, tapping the open
@@ -39,6 +44,17 @@
       setState(p[0], value);
     });
   });
+
+  // A link to a shown/hidden block (e.g. voor-particulieren.html#bewust-zijn-met-energie) opens it.
+  // Scrolling to it: "Scroll to #anchor" at the bottom.
+  var openHashTarget = function () {
+    var el = location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!el || !el.hasAttribute('data-show')) return;
+    var p = el.getAttribute('data-show').split(':');
+    setState(p[0], p[1]);
+  };
+  openHashTarget();
+  window.addEventListener('hashchange', openHashTarget);
 
   // ---- Forms ----
   // <form data-form="contact" data-submit="contactsent:true">: the fields are checked here, then
@@ -196,6 +212,9 @@
       setTimeout(function () {
         var el = document.getElementById(id);
         if (!el) return;
+        // An Agenda item on mobile: its panel sits under its tab, so scroll to the tab (title visible).
+        var tab = isMobile() && el.hasAttribute('data-show') && document.querySelector('[aria-controls="' + id + '"]');
+        if (tab) el = tab;
         var y = el.getBoundingClientRect().top + window.pageYOffset - 20;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }, 150);

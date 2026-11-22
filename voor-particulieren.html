@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl" data-activetab="1">
+<html lang="nl" data-activetab="nature-qigong">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,15 +23,6 @@
 /* state-dependent styles */
   .d-welkomPhotoColStyle.d-welkomPhotoColStyle { display: flex; min-height: 0 }
   .d-cardStyle.d-cardStyle { display: block; text-decoration: none; transition: transform 0.25s ease, filter 0.25s ease }
-  html[data-activetab="2"] x-if.if-tab1Active-2 { display: none }
-  html[data-activetab="3"] x-if.if-tab1Active-2 { display: none }
-  html[data-activetab="0"] x-if.if-tab1Active-2 { display: none }
-  html[data-activetab="1"] x-if.if-tab2Active-4 { display: none }
-  html[data-activetab="3"] x-if.if-tab2Active-4 { display: none }
-  html[data-activetab="0"] x-if.if-tab2Active-4 { display: none }
-  html[data-activetab="1"] x-if.if-tab3Active-6 { display: none }
-  html[data-activetab="2"] x-if.if-tab3Active-6 { display: none }
-  html[data-activetab="0"] x-if.if-tab3Active-6 { display: none }
 /* desktop (wider than 900px) */
 @media not all and (max-width: 900px) {
   .d-welkomColStyle.d-welkomColStyle { margin-top: 50px }
@@ -39,34 +30,6 @@
   .d-welkomPhotoStyle.d-welkomPhotoStyle { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 10px }
   .d-cardsColStyle.d-cardsColStyle { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 80px }
   .d-agendaColStyle.d-agendaColStyle { margin-top: 80px }
-  .d-agendaGridStyle.d-agendaGridStyle { display: grid; grid-template-columns: 320px minmax(0, 1fr); grid-template-rows: auto auto auto 1fr; min-height: 420px; background: linear-gradient(to right, #efdfe0 0, #efdfe0 320px, transparent 320px) }
-  html[data-activetab="1"] .d-tab1Style.d-tab1Style { order: 0; grid-column: 1; grid-row: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: #ffffff; transition: background-color 0.2s }
-  html[data-activetab="2"] .d-tab1Style.d-tab1Style { order: 0; grid-column: 1; grid-row: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="3"] .d-tab1Style.d-tab1Style { order: 0; grid-column: 1; grid-row: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="0"] .d-tab1Style.d-tab1Style { order: 0; grid-column: 1; grid-row: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="1"] .d-chevron1Style.d-chevron1Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: rotate(180deg) }
-  html[data-activetab="2"] .d-chevron1Style.d-chevron1Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="3"] .d-chevron1Style.d-chevron1Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="0"] .d-chevron1Style.d-chevron1Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="1"] .d-tab2Style.d-tab2Style { order: 0; grid-column: 1; grid-row: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="2"] .d-tab2Style.d-tab2Style { order: 0; grid-column: 1; grid-row: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: #ffffff; transition: background-color 0.2s }
-  html[data-activetab="3"] .d-tab2Style.d-tab2Style { order: 0; grid-column: 1; grid-row: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="0"] .d-tab2Style.d-tab2Style { order: 0; grid-column: 1; grid-row: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="1"] .d-chevron2Style.d-chevron2Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="2"] .d-chevron2Style.d-chevron2Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: rotate(180deg) }
-  html[data-activetab="3"] .d-chevron2Style.d-chevron2Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="0"] .d-chevron2Style.d-chevron2Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="1"] .d-tab3Style.d-tab3Style { order: 0; grid-column: 1; grid-row: 3; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="2"] .d-tab3Style.d-tab3Style { order: 0; grid-column: 1; grid-row: 3; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="3"] .d-tab3Style.d-tab3Style { order: 0; grid-column: 1; grid-row: 3; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: #ffffff; transition: background-color 0.2s }
-  html[data-activetab="0"] .d-tab3Style.d-tab3Style { order: 0; grid-column: 1; grid-row: 3; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 22px 26px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="1"] .d-chevron3Style.d-chevron3Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="2"] .d-chevron3Style.d-chevron3Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="3"] .d-chevron3Style.d-chevron3Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: rotate(180deg) }
-  html[data-activetab="0"] .d-chevron3Style.d-chevron3Style { display: none; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  .d-panel1Style.d-panel1Style { grid-column: 2; grid-row: 1 / span 4; padding: 34px 40px 36px 40px; border-left: 1px solid rgba(161,86,91,0.22); min-width: 0 }
-  .d-panel2Style.d-panel2Style { grid-column: 2; grid-row: 1 / span 4; padding: 34px 40px 36px 40px; border-left: 1px solid rgba(161,86,91,0.22); min-width: 0 }
-  .d-panel3Style.d-panel3Style { grid-column: 2; grid-row: 1 / span 4; padding: 34px 40px 36px 40px; border-left: 1px solid rgba(161,86,91,0.22); min-width: 0 }
 }
 /* mobile (900px and narrower) */
 @media (max-width: 900px) {
@@ -75,37 +38,32 @@
   .d-welkomPhotoStyle.d-welkomPhotoStyle { display: block; width: 100%; height: auto; border-radius: 10px }
   .d-cardsColStyle.d-cardsColStyle { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 50px }
   .d-agendaColStyle.d-agendaColStyle { margin-top: 50px }
-  .d-agendaGridStyle.d-agendaGridStyle { display: flex; flex-direction: column }
-  html[data-activetab="1"] .d-tab1Style.d-tab1Style { order: 0; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: #f6ebec; transition: background-color 0.2s }
-  html[data-activetab="2"] .d-tab1Style.d-tab1Style { order: 0; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="3"] .d-tab1Style.d-tab1Style { order: 0; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="0"] .d-tab1Style.d-tab1Style { order: 0; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="1"] .d-chevron1Style.d-chevron1Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: rotate(180deg) }
-  html[data-activetab="2"] .d-chevron1Style.d-chevron1Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="3"] .d-chevron1Style.d-chevron1Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="0"] .d-chevron1Style.d-chevron1Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="1"] .d-tab2Style.d-tab2Style { order: 2; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="2"] .d-tab2Style.d-tab2Style { order: 2; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: #f6ebec; transition: background-color 0.2s }
-  html[data-activetab="3"] .d-tab2Style.d-tab2Style { order: 2; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="0"] .d-tab2Style.d-tab2Style { order: 2; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="1"] .d-chevron2Style.d-chevron2Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="2"] .d-chevron2Style.d-chevron2Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: rotate(180deg) }
-  html[data-activetab="3"] .d-chevron2Style.d-chevron2Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="0"] .d-chevron2Style.d-chevron2Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="1"] .d-tab3Style.d-tab3Style { order: 4; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="2"] .d-tab3Style.d-tab3Style { order: 4; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="3"] .d-tab3Style.d-tab3Style { order: 4; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: #f6ebec; transition: background-color 0.2s }
-  html[data-activetab="0"] .d-tab3Style.d-tab3Style { order: 4; grid-column: auto; grid-row: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); padding: 18px 20px; background: transparent; transition: background-color 0.2s }
-  html[data-activetab="1"] .d-chevron3Style.d-chevron3Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="2"] .d-chevron3Style.d-chevron3Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  html[data-activetab="3"] .d-chevron3Style.d-chevron3Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: rotate(180deg) }
-  html[data-activetab="0"] .d-chevron3Style.d-chevron3Style { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s; transform: none }
-  .d-panel1Style.d-panel1Style { order: 1; padding: 20px 20px 26px 20px; border-bottom: 1px solid rgba(161,86,91,0.22) }
-  x-if.if-isDesktop { display: none }
-  .d-panel2Style.d-panel2Style { order: 3; padding: 20px 20px 26px 20px; border-bottom: 1px solid rgba(161,86,91,0.22) }
-  x-if.if-isDesktop-3 { display: none }
-  .d-panel3Style.d-panel3Style { order: 5; padding: 20px 20px 26px 20px; border-bottom: 1px solid rgba(161,86,91,0.22) }
-  x-if.if-isDesktop-5 { display: none }
+}
+/* Agenda: tabs on the left with the open item beside them (desktop), an accordion (mobile).
+   Each item = one .agenda-tab button + one .agenda-panel; no per-item CSS. Which item is open:
+   data-activetab on <html>. site.js sets aria-expanded on the buttons and hides the other
+   panels (data-show). The mobile order (tab, its open panel, the tabs after it) also needs no
+   per-item rules: the open panel gets order 1, the tabs after the open tab order 2. */
+.agenda-tab { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; box-sizing: border-box; text-align: left; font-family: inherit; cursor: pointer; border: none; border-bottom: 1px solid rgba(161,86,91,0.22); background: transparent; transition: background-color 0.2s }
+.agenda-chevron { display: inline-flex; flex-shrink: 0; color: #A1565B; transition: transform 0.25s }
+.agenda-tab[aria-expanded="true"] .agenda-chevron { transform: rotate(180deg) }
+.agenda-panel[hidden] { display: none }
+@media not all and (max-width: 900px) {
+  .agenda { display: grid; grid-template-columns: 320px minmax(0, 1fr); min-height: 420px; background: linear-gradient(to right, #efdfe0 0, #efdfe0 320px, transparent 320px) }
+  .agenda-tabs { grid-column: 1; grid-row: 1; display: flex; flex-direction: column }
+  .agenda-tab { padding: 22px 26px }
+  .agenda-tab[aria-expanded="true"] { background: #ffffff }
+  .agenda-chevron { display: none }
+  .agenda-panel { grid-column: 2; grid-row: 1; padding: 34px 40px 36px 40px; border-left: 1px solid rgba(161,86,91,0.22); min-width: 0 }
+}
+@media (max-width: 900px) {
+  .agenda { display: flex; flex-direction: column }
+  .agenda-tabs { display: contents }
+  .agenda-tab { padding: 18px 20px }
+  .agenda-tab[aria-expanded="true"] { background: #f6ebec }
+  .agenda-tab[aria-expanded="true"] ~ .agenda-tab { order: 2 }
+  .agenda-panel { order: 1; padding: 20px 20px 26px 20px; border-bottom: 1px solid rgba(161,86,91,0.22) }
+  .agenda-head { display: none }
 }
 /* hover effects */
 .hv0:hover { transform: translateY(-4px) !important; filter: brightness(1.09) saturate(1.05) !important }
@@ -503,91 +461,87 @@
     <h4 style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.09em; font-kerning: none; font-variant-ligatures: none; font-size: 38px; line-height: 1.2; color: #A1565B; text-align: center; margin-bottom: 32px;">Agenda</h4>
     
     <div style="background: rgba(255,255,255,0.82); border-radius: 14px; box-shadow: 0 10px 30px rgba(31,56,100,0.08); overflow: hidden;">
-      <div class="d-agendaGridStyle">
-        <button class="d-tab1Style" type="button" data-set="activetab:1" data-set-toggle aria-expanded="true">
-          <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
-            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; color: #A1565B;">Iedere woensdag · 19:30</span>
-            <span style="font-size: 17px; font-weight: 700; line-height: 1.35; color: #1F3864;">Nature Qigong</span>
+      <div class="agenda">
+        <div class="agenda-tabs">
+          <button class="agenda-tab" type="button" data-set="activetab:nature-qigong" data-set-toggle aria-expanded="true" aria-controls="nature-qigong">
+            <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; color: #A1565B;">Iedere woensdag · 19:30</span>
+              <span style="font-size: 17px; font-weight: 700; line-height: 1.35; color: #1F3864;">Nature Qigong</span>
             
-          </span>
-          <span class="d-chevron1Style"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
-        </button>
-        <button class="d-tab2Style" type="button" data-set="activetab:2" data-set-toggle aria-expanded="false">
-          <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
-            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; color: #A1565B;">2027</span>
-            <span style="font-size: 17px; font-weight: 700; line-height: 1.35; color: #1F3864;">Bewust zijn met Energie</span>
+            </span>
+            <span class="agenda-chevron"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <button class="agenda-tab" type="button" data-set="activetab:bewust-zijn-met-energie" data-set-toggle aria-expanded="false" aria-controls="bewust-zijn-met-energie">
+            <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; color: #A1565B;">2027</span>
+              <span style="font-size: 17px; font-weight: 700; line-height: 1.35; color: #1F3864;">Bewust zijn met Energie</span>
             
-          </span>
-          <span class="d-chevron2Style"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
-        </button>
-        <button class="d-tab3Style" type="button" data-set="activetab:3" data-set-toggle aria-expanded="false">
-          <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
-            <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; color: #A1565B;">8 weken · in je eigen tempo</span>
-            <span style="font-size: 17px; font-weight: 700; line-height: 1.35; color: #1F3864;">De sleutels tot Geluk</span>
+            </span>
+            <span class="agenda-chevron"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <button class="agenda-tab" type="button" data-set="activetab:sleutels-tot-geluk" data-set-toggle aria-expanded="false" aria-controls="sleutels-tot-geluk">
+            <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+              <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.4; color: #A1565B;">8 weken · in je eigen tempo</span>
+              <span style="font-size: 17px; font-weight: 700; line-height: 1.35; color: #1F3864;">De sleutels tot Geluk</span>
             
-          </span>
-          <span class="d-chevron3Style"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
-        </button>
-        <x-if class="if-tab1Active-2">
-          <div class="d-panel1Style">
-            <x-if class="if-isDesktop">
-              <p style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.06em; font-size: 22px; line-height: 1.3; color: #A1565B;">Nature Qigong</p>
-              <p style="margin: 6px 0 22px 0; font-size: 14px; font-weight: 600; color: #555555;">Iedere woensdag · 19:30 · Geldermalsen · buiten</p>
-            </x-if>
-            <div>
-            <p>Iedere woensdag avond 19:30 geef ik 'Nature Qigong' groepslessen. Sluit jij je ook aan bij ons? Qigong is gebaseerd op een eeuwenoude zeer effectieve traditionele Chinese bewegingsleer en wordt ook wel bewegend mediteren genoemd. De oefeningen die we doen zijn eenvoudig en zacht, maar zeer doeltreffend op fysiek, maar ook op mentaal vlak !<br>We trainen buiten op een beschutte en besloten prachtige plek. Wil je graag op een liefdevolle manier bezig zijn met je gezondheid (fysiek en mentaal) en totale ontspanning ervaren? Voel je dan welkom. Mocht je vragen hebben of een keer een proefles vrijblijvend mee willen doen, dan hoor ik dat graag. Voor nadere informatie of om je in te schrijven <u><a href="contact.html">klik hier</a></u>.</p>
-            
+            </span>
+            <span class="agenda-chevron"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+        </div>
+        <div class="agenda-panel" id="nature-qigong" data-show="activetab:nature-qigong">
+          <div class="agenda-head">
+            <p style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.06em; font-size: 22px; line-height: 1.3; color: #A1565B;">Nature Qigong</p>
+            <p style="margin: 6px 0 22px 0; font-size: 14px; font-weight: 600; color: #555555;">Iedere woensdag · 19:30 · Geldermalsen · buiten</p>
           </div>
-            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px;">
-              <a class="hv1" href="contact.html#formulier" style="display: inline-flex; align-items: center; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-weight: 700; font-size: 14px; line-height: 1; text-decoration: none;">Aanmelden of meer info</a>
-            </div>
+          <div>
+          <p>Iedere woensdag avond 19:30 geef ik 'Nature Qigong' groepslessen. Sluit jij je ook aan bij ons? Qigong is gebaseerd op een eeuwenoude zeer effectieve traditionele Chinese bewegingsleer en wordt ook wel bewegend mediteren genoemd. De oefeningen die we doen zijn eenvoudig en zacht, maar zeer doeltreffend op fysiek, maar ook op mentaal vlak !<br>We trainen buiten op een beschutte en besloten prachtige plek. Wil je graag op een liefdevolle manier bezig zijn met je gezondheid (fysiek en mentaal) en totale ontspanning ervaren? Voel je dan welkom. Mocht je vragen hebben of een keer een proefles vrijblijvend mee willen doen, dan hoor ik dat graag. Voor nadere informatie of om je in te schrijven <u><a href="contact.html">klik hier</a></u>.</p>
+          
           </div>
-        </x-if>
-        <x-if class="if-tab2Active-4">
-          <div class="d-panel2Style">
-            <x-if class="if-isDesktop-3">
-              <p style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.06em; font-size: 22px; line-height: 1.3; color: #A1565B;">Bewust zijn met Energie</p>
-              <p style="margin: 6px 0 22px 0; font-size: 14px; font-weight: 600; color: #555555;">2027 n.t.b. · Geldermalsen · dagworkshop</p>
-            </x-if>
-            <div>
-            <p>In deze dag neem ik je mee in de wereld van (levens)energie. We zijn niet gewend om onze energetische lichaam te voelen én te gebruiken. Door hiermee te oefenen leer je dat wel te doen. Dat heeft vele voordelen, zoals zorgdragen voor je eigen energiehuishouding en voorkomen dat je moe wordt na bv een bezoek. Echter het heeft nog meer voordelen. Wil je weten welke lees dan de nadere informatie bij deze activiteit of geef je direct op.</p>
-            <p>Deze dag is voor de beginner en de gevorderde. Je oefent en traint op je eigen niveau. Jouw eigen ervaring zul je zo steeds meer verdiepen. Je krijgt o.a. handvaten hoe je je jouw energie kan behouden en versterken en je gaat oefeningen doen om de energie van de ander te ervaren.<br>Meer informatie kun je via <u><a href="inspiratie-bewust-zijn-met-energie-28-juni-2026.html">deze</a></u> uitgebreide flyer lezen. Indien je je zou willen aanmelden of indien je meer informatie zou willen ontvangen klik <u><a href="contact.html">hier</a></u>.</p>
-            <div style="margin-top: 24px; background: rgba(211,182,184,0.55); border-radius: 6px; padding: 22px 28px;">
-              <h3 style="margin: 0 0 14px 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 19px; color: #A1565B;">Ervaringen</h3>
-              <p style="margin: 0 0 8px 0; font-style: italic;">“Deze workshop is een belevenis die je energie geeft en je met jezelf en anderen in contact brengt.”</p>
-              <p style="margin: 0 0 18px 0;">– Jurgen –</p>
-              <p style="margin: 0 0 8px 0; font-style: italic;">“Ik heb goed kunnen ervaren wat mijn energetisch lichaam mij vertelt.”</p>
-              <p style="margin: 0;">– Agnes –</p>
-            </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px;">
+            <a class="hv1" href="contact.html#inschrijven" style="display: inline-flex; align-items: center; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-weight: 700; font-size: 14px; line-height: 1; text-decoration: none;">Aanmelden of meer info</a>
           </div>
-            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px;">
-              <a class="hv1" href="contact.html#formulier" style="display: inline-flex; align-items: center; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-weight: 700; font-size: 14px; line-height: 1; text-decoration: none;">Aanmelden of meer info</a>
-            </div>
+        </div>
+        <div class="agenda-panel" id="bewust-zijn-met-energie" data-show="activetab:bewust-zijn-met-energie" hidden>
+          <div class="agenda-head">
+            <p style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.06em; font-size: 22px; line-height: 1.3; color: #A1565B;">Bewust zijn met Energie</p>
+            <p style="margin: 6px 0 22px 0; font-size: 14px; font-weight: 600; color: #555555;">2027 n.t.b. · Geldermalsen · dagworkshop</p>
           </div>
-        </x-if>
-        <x-if class="if-tab3Active-6">
-          <div class="d-panel3Style">
-            <x-if class="if-isDesktop-5">
-              <p style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.06em; font-size: 22px; line-height: 1.3; color: #A1565B;">De sleutels tot Geluk</p>
-              <p style="margin: 6px 0 22px 0; font-size: 14px; font-weight: 600; color: #555555;">8 weken · in je eigen tempo · Thuiscursus per e-mail</p>
-            </x-if>
-            <div>
-            <p>Ontdek de sleutels tot geluk; een bewezen, laagdrempelige en effectieve methode om je in 8 weken gelukkig(er) te voelen ! Je ontvangt in jouw e-mail box acht bijlagen met elk een verschillende sleutel tot jouw geluk. Elke sleutel bevat een onderwerp, waarmee je die week aan de slag gaat. Het onderwerp wordt behandeld aan de hand van wetenschappelijke onderbouwde uitleg, achtergrond informatie en een (eenvoudige) oefening. De tijdsduur die het je kost varieert een beetje van je eigen aanpak en van week tot week; vanaf circa 15 min. per week tot 30 min. per dag.</p>
-            <p>Voor een investering van €80 ontvang je deze complete 8-weekse cursus, bestaande uit acht inspirerende sleutels die je stap voor stap begeleiden naar meer geluk. Dat is maar €10 per week voor meer innerlijke balans.</p>
-            <p>Je ontvangt direct daarna de sleutels in jouw e-mail box. Je kan de sleutels één voor één openen en daarmee zelf je eigen tempo bepalen voor het doorlopen van deze cursus. Minimale tijdsduur tussen twee sleutels is één week. Hiermee kun je in acht weken deze cursus doorlopen. Geef je op door mij een bericht te sturen. Meer informatie is in deze <u><a href="inspiratie-ontdek-de-sleutels-tot-geluk-editie-2025.html"><b>flyer</b></a></u> te vinden.</p>
-            <div style="margin-top: 24px; background: rgba(211,182,184,0.55); border-radius: 6px; padding: 22px 28px;">
-              <h3 style="margin: 0 0 14px 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 19px; color: #A1565B;">Ervaringen</h3>
-              <p style="margin: 0 0 8px 0; font-style: italic;">“Alle 8 thema's wat jij hebt behandeld hebt kloppen echt. Ik word hier blij en gelukkig van.”</p>
-              <p style="margin: 0 0 18px 0;">– Aziza –</p>
-              <p style="margin: 0 0 8px 0; font-style: italic;">“Deze cursus doet mij zo goed. Ik heb er ook veel van geleerd.”</p>
-              <p style="margin: 0;">– Ine –</p>
-            </div>
+          <div>
+          <p>In deze dag neem ik je mee in de wereld van (levens)energie. We zijn niet gewend om onze energetische lichaam te voelen én te gebruiken. Door hiermee te oefenen leer je dat wel te doen. Dat heeft vele voordelen, zoals zorgdragen voor je eigen energiehuishouding en voorkomen dat je moe wordt na bv een bezoek. Echter het heeft nog meer voordelen. Wil je weten welke lees dan de nadere informatie bij deze activiteit of geef je direct op.</p>
+          <p>Deze dag is voor de beginner en de gevorderde. Je oefent en traint op je eigen niveau. Jouw eigen ervaring zul je zo steeds meer verdiepen. Je krijgt o.a. handvaten hoe je je jouw energie kan behouden en versterken en je gaat oefeningen doen om de energie van de ander te ervaren.<br>Meer informatie kun je via <u><a href="inspiratie-bewust-zijn-met-energie-28-juni-2026.html">deze</a></u> uitgebreide flyer lezen. Indien je je zou willen aanmelden of indien je meer informatie zou willen ontvangen klik <u><a href="contact.html">hier</a></u>.</p>
+          <div style="margin-top: 24px; background: rgba(211,182,184,0.55); border-radius: 6px; padding: 22px 28px;">
+            <h3 style="margin: 0 0 14px 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 19px; color: #A1565B;">Ervaringen</h3>
+            <p style="margin: 0 0 8px 0; font-style: italic;">“Deze workshop is een belevenis die je energie geeft en je met jezelf en anderen in contact brengt.”</p>
+            <p style="margin: 0 0 18px 0;">– Jurgen –</p>
+            <p style="margin: 0 0 8px 0; font-style: italic;">“Ik heb goed kunnen ervaren wat mijn energetisch lichaam mij vertelt.”</p>
+            <p style="margin: 0;">– Agnes –</p>
           </div>
-            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px;">
-              <a class="hv1" href="contact.html#formulier" style="display: inline-flex; align-items: center; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-weight: 700; font-size: 14px; line-height: 1; text-decoration: none;">Aanmelden of meer info</a>
-            </div>
           </div>
-        </x-if>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px;">
+            <a class="hv1" href="contact.html#inschrijven" style="display: inline-flex; align-items: center; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-weight: 700; font-size: 14px; line-height: 1; text-decoration: none;">Aanmelden of meer info</a>
+          </div>
+        </div>
+        <div class="agenda-panel" id="sleutels-tot-geluk" data-show="activetab:sleutels-tot-geluk" hidden>
+          <div class="agenda-head">
+            <p style="margin: 0; font-family: 'Cinzel Decorative', serif; font-weight: 700; letter-spacing: 0.06em; font-size: 22px; line-height: 1.3; color: #A1565B;">De sleutels tot Geluk</p>
+            <p style="margin: 6px 0 22px 0; font-size: 14px; font-weight: 600; color: #555555;">8 weken · in je eigen tempo · Thuiscursus per e-mail</p>
+          </div>
+          <div>
+          <p>Ontdek de sleutels tot geluk; een bewezen, laagdrempelige en effectieve methode om je in 8 weken gelukkig(er) te voelen ! Je ontvangt in jouw e-mail box acht bijlagen met elk een verschillende sleutel tot jouw geluk. Elke sleutel bevat een onderwerp, waarmee je die week aan de slag gaat. Het onderwerp wordt behandeld aan de hand van wetenschappelijke onderbouwde uitleg, achtergrond informatie en een (eenvoudige) oefening. De tijdsduur die het je kost varieert een beetje van je eigen aanpak en van week tot week; vanaf circa 15 min. per week tot 30 min. per dag.</p>
+          <p>Voor een investering van €80 ontvang je deze complete 8-weekse cursus, bestaande uit acht inspirerende sleutels die je stap voor stap begeleiden naar meer geluk. Dat is maar €10 per week voor meer innerlijke balans.</p>
+          <p>Je ontvangt direct daarna de sleutels in jouw e-mail box. Je kan de sleutels één voor één openen en daarmee zelf je eigen tempo bepalen voor het doorlopen van deze cursus. Minimale tijdsduur tussen twee sleutels is één week. Hiermee kun je in acht weken deze cursus doorlopen. Geef je op door mij een bericht te sturen. Meer informatie is in deze <u><a href="inspiratie-ontdek-de-sleutels-tot-geluk-editie-2025.html"><b>flyer</b></a></u> te vinden.</p>
+          <div style="margin-top: 24px; background: rgba(211,182,184,0.55); border-radius: 6px; padding: 22px 28px;">
+            <h3 style="margin: 0 0 14px 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 19px; color: #A1565B;">Ervaringen</h3>
+            <p style="margin: 0 0 8px 0; font-style: italic;">“Alle 8 thema's wat jij hebt behandeld hebt kloppen echt. Ik word hier blij en gelukkig van.”</p>
+            <p style="margin: 0 0 18px 0;">– Aziza –</p>
+            <p style="margin: 0 0 8px 0; font-style: italic;">“Deze cursus doet mij zo goed. Ik heb er ook veel van geleerd.”</p>
+            <p style="margin: 0;">– Ine –</p>
+          </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px;">
+            <a class="hv1" href="contact.html#inschrijven" style="display: inline-flex; align-items: center; border-radius: 100px; padding: 16px 30px; background-color: #d3b6b8; color: #000000; font-weight: 700; font-size: 14px; line-height: 1; text-decoration: none;">Aanmelden of meer info</a>
+          </div>
+        </div>
       </div>
     </div>
   </section></main>
